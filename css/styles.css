@@ -254,12 +254,9 @@ ul   { list-style: none; }
 }
 
 .hero-dot {
-   width: 28px; height: 1px;
-   background-color: rgba(255,255,255,0.3);
-   border: none;
+   padding: 8px 0;
+   height: auto;
    cursor: pointer;
-   transition: var(--transition);
-   padding: 0;
 }
 
 .hero-dot.active { background-color: var(--gold); width: 48px; }
