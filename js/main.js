@@ -1,5 +1,5 @@
 // =============================================
-//  B.D. Photography — main.js
+//  B.D. Photography - main.js
 //  Handles:
 //    1. Nav scroll effect + hamburger menu
 //    2. Hero slideshow with Ken Burns
@@ -12,7 +12,7 @@
 
 
 // ─────────────────────────────────────────────
-// 1. NAV — SCROLL EFFECT + HAMBURGER
+// 1. NAV - SCROLL EFFECT + HAMBURGER
 // ─────────────────────────────────────────────
 (function initNav() {
    var nav    = document.getElementById('mainNav');
@@ -60,7 +60,7 @@
 
 
 // ─────────────────────────────────────────────
-// 2. HERO SLIDESHOW — KEN BURNS + DOTS
+// 2. HERO SLIDESHOW - KEN BURNS + DOTS
 // ─────────────────────────────────────────────
 (function initSlideshow() {
    var slides  = document.querySelectorAll('.hero-slide');
@@ -487,7 +487,7 @@
 
 
 // ─────────────────────────────────────────────
-// 7. CLIENT PORTAL — PASSWORD + SESSION TABS
+// 7. CLIENT PORTAL - PASSWORD + SESSION TABS
 // ─────────────────────────────────────────────
 (function initClientPortal() {
    var loginEl  = document.getElementById('portalLogin');
@@ -495,7 +495,7 @@
    if (!loginEl || !galleryEl) return;
 
    // =====================================================
-   //  CLIENT PASSWORDS — ADD / EDIT HERE
+   //  CLIENT PASSWORDS - ADD / EDIT HERE
    //
    //  Format: 'password': 'Client Name'
    //
@@ -504,7 +504,7 @@
    //    2. Create their gallery folder: images/clients/theirname/
    //    3. Add their photos to the portal HTML above
    //
-   //  Keep passwords hard to guess — mix of words and
+   //  Keep passwords hard to guess - mix of words and
    //  numbers works well. Example: 'canyon2026photos'
    // =====================================================
    var PASSWORDS = {
