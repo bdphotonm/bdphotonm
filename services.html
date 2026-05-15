@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Services & Pricing — B.D. Photography</title>
+   <meta name="description" content="Photography services and pricing from B.D. Photography — portraits, real estate, automotive, and fine art prints based in New Mexico.">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">B.D.<span> Photography</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="about.html">About</a></li>
+         <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+         <li><a href="gallery/index.html">Gallery</a></li>
+         <li><a href="contact.html">Contact</a></li>
+         <li><a href="client/index.html">Client Portal</a></li>
+      </ul>
+   </nav>
+
+   <!-- Page Hero -->
+   <header style="position:relative; height:60vh; min-height:400px; overflow:hidden;
+                  display:flex; align-items:flex-end; justify-content:flex-start;" role="banner">
+      <img src="images/slideshow/slideshow-4.jpg"
+           alt="Photography services by B.D. Photography"
+           style="position:absolute; inset:0; width:100%; height:100%;
+                  object-fit:cover; object-position:center;">
+      <div style="position:absolute; inset:0;
+                  background:linear-gradient(to bottom, rgba(13,13,13,0.2) 0%, rgba(13,13,13,0.75) 100%);"></div>
+      <div class="services-hero-text" style="position:relative; z-index:1; padding:0 80px 60px;">
+         <span style="display:block; font-size:0.7rem; letter-spacing:0.3em;
+                      text-transform:uppercase; color:var(--gold); margin-bottom:12px;">
+            Work With Me
+         </span>
+         <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,5vw,4rem);
+                    font-weight:300; color:var(--warm-white); line-height:1.1;">
+            Services &amp; <em style="font-style:italic; color:var(--gold-light);">Pricing</em>
+         </h1>
+      </div>
+   </header>
+
+   <main>
+
+      <!-- Intro -->
+      <section class="section section-dark" aria-labelledby="services-intro-heading">
+         <div class="container" style="text-align:center; max-width:700px; margin:0 auto;">
+            <div class="fade-up">
+               <span class="section-eyebrow">What I Offer</span>
+               <h2 class="section-title" id="services-intro-heading">
+                  Every Session,<br><em>Every Story</em>
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+               <p class="section-subtitle" style="margin:0 auto;">
+                  From intimate portrait sessions to fast-turnaround real estate shoots,
+                  I bring the same attention to light, composition, and detail to every job.
+                  All packages include professional editing and online delivery.
+               </p>
+            </div>
+         </div>
+      </section>
+
+      <!-- Portrait Sessions -->
+      <section class="section section-black" aria-labelledby="portrait-heading">
+         <div class="container">
+            <div class="fade-up">
+               <span class="section-eyebrow">Session Type</span>
+               <h2 class="section-title" id="portrait-heading">
+                  Portrait <em>Sessions</em>
+               </h2>
+               <div class="section-divider"></div>
+               <p class="section-subtitle" style="margin-bottom:48px;">
+                  Individual, couple, family, and pet portrait sessions available.
+                  Studio or on-location across New Mexico.
+               </p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+                        gap:2px;" class="fade-up">
+
+               <!-- Mini -->
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">✦</span>
+                  <h3>Mini Session</h3>
+                  <p>Perfect for individuals, updated headshots, or a quick family update.
+                     Fast, fun, and focused.</p>
+                  <ul style="margin:0 0 20px 16px; font-size:0.85rem;
+                              color:var(--text-cream); line-height:2;">
+                     <li>30 minutes on-location</li>
+                     <li>1 outfit / look</li>
+                     <li>15 edited digital images</li>
+                     <li>Online gallery delivery</li>
+                  </ul>
+                  <span class="service-price">$150</span>
+               </div>
+
+               <!-- Standard -->
+               <div class="service-card" style="border-color:rgba(201,169,110,0.4);">
+                  <span class="service-icon" aria-hidden="true">🎭</span>
+                  <h3>Standard Session</h3>
+                  <p>The most popular option — plenty of time to relax, explore different
+                     looks, and capture a full range of images.</p>
+                  <ul style="margin:0 0 20px 16px; font-size:0.85rem;
+                              color:var(--text-cream); line-height:2;">
+                     <li>1 hour on-location</li>
+                     <li>2 outfits / looks</li>
+                     <li>30 edited digital images</li>
+                     <li>Online gallery delivery</li>
+                     <li>Print release included</li>
+                  </ul>
+                  <span class="service-price">$250</span>
+               </div>
+
+               <!-- Premium -->
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">👑</span>
+                  <h3>Premium Session</h3>
+                  <p>For families, extended shoots, or clients who want the full experience
+                     across multiple locations and looks.</p>
+                  <ul style="margin:0 0 20px 16px; font-size:0.85rem;
+                              color:var(--text-cream); line-height:2;">
+                     <li>2 hours on-location</li>
+                     <li>Unlimited outfits / looks</li>
+                     <li>60+ edited digital images</li>
+                     <li>Online gallery delivery</li>
+                     <li>Print release included</li>
+                     <li>One 8x10 print included</li>
+                  </ul>
+                  <span class="service-price">$400</span>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Real Estate -->
+      <section class="section section-dark" aria-labelledby="realestate-heading">
+         <div class="container">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
+
+               <div class="fade-up">
+                  <span class="section-eyebrow">Session Type</span>
+                  <h2 class="section-title" id="realestate-heading">
+                     Real Estate <em>Photography</em>
+                  </h2>
+                  <div class="section-divider"></div>
+                  <p class="section-subtitle" style="margin-bottom:36px;">
+                     Fast turnaround real estate photography for agents, brokers,
+                     and homeowners across New Mexico. MLS-ready images delivered
+                     within 24 hours.
+                  </p>
+                  <div style="display:flex; flex-direction:column; gap:0;">
+                     <div style="padding:20px 0; border-bottom:1px solid var(--border-light);
+                                 display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                           <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                     color:var(--warm-white); margin:0 0 4px;">
+                              Standard (under 2,000 sq ft)
+                           </p>
+                           <p style="font-size:0.82rem; color:var(--text-light); margin:0;">
+                              20+ edited photos, 24hr delivery
+                           </p>
+                        </div>
+                        <span style="font-family:'Cormorant Garamond',serif; font-size:1.3rem;
+                                     color:var(--gold); font-style:italic; white-space:nowrap;
+                                     margin-left:20px;">$199</span>
+                     </div>
+                     <div style="padding:20px 0; border-bottom:1px solid var(--border-light);
+                                 display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                           <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                     color:var(--warm-white); margin:0 0 4px;">
+                              Large Home (2,000–4,000 sq ft)
+                           </p>
+                           <p style="font-size:0.82rem; color:var(--text-light); margin:0;">
+                              35+ edited photos, 24hr delivery
+                           </p>
+                        </div>
+                        <span style="font-family:'Cormorant Garamond',serif; font-size:1.3rem;
+                                     color:var(--gold); font-style:italic; white-space:nowrap;
+                                     margin-left:20px;">$299</span>
+                     </div>
+                     <div style="padding:20px 0; border-bottom:1px solid var(--border-light);
+                                 display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                           <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                     color:var(--warm-white); margin:0 0 4px;">
+                              Luxury / Estate (4,000+ sq ft)
+                           </p>
+                           <p style="font-size:0.82rem; color:var(--text-light); margin:0;">
+                              50+ edited photos, twilight shot included
+                           </p>
+                        </div>
+                        <span style="font-family:'Cormorant Garamond',serif; font-size:1.3rem;
+                                     color:var(--gold); font-style:italic; white-space:nowrap;
+                                     margin-left:20px;">$449</span>
+                     </div>
+                     <div style="padding:20px 0;
+                                 display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                           <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                     color:var(--warm-white); margin:0 0 4px;">
+                              Aerial / Drone Add-on
+                           </p>
+                           <p style="font-size:0.82rem; color:var(--text-light); margin:0;">
+                              10+ aerial images, FAA compliant
+                           </p>
+                        </div>
+                        <span style="font-family:'Cormorant Garamond',serif; font-size:1.3rem;
+                                     color:var(--gold); font-style:italic; white-space:nowrap;
+                                     margin-left:20px;">+$150</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="fade-up" style="position:relative; margin-top:40px;">
+                  <div style="aspect-ratio:4/5; background-color:var(--dark-mid);
+                              overflow:hidden; display:flex; align-items:center;
+                              justify-content:center; flex-direction:column;
+                              gap:12px; color:var(--text-light);">
+                     <span style="font-size:3rem;">🏡</span>
+                     <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase;">
+                        Add a real estate sample
+                     </span>
+                     <span style="font-size:0.65rem; opacity:0.6;">images/gallery/realestate/sample.jpg</span>
+                  </div>
+                  <div style="position:absolute; top:-12px; right:-12px; bottom:12px; left:12px;
+                              border:1px solid var(--border); z-index:-1; pointer-events:none;"></div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Automotive -->
+      <section class="section section-black" aria-labelledby="auto-heading">
+         <div class="container">
+            <div class="fade-up">
+               <span class="section-eyebrow">Session Type</span>
+               <h2 class="section-title" id="auto-heading">
+                  Automotive <em>Photography</em>
+               </h2>
+               <div class="section-divider"></div>
+               <p class="section-subtitle" style="margin-bottom:48px;">
+                  Detail and lifestyle automotive photography for private sellers,
+                  dealerships, and enthusiasts. Indoor studio or dramatic outdoor
+                  New Mexico locations available.
+               </p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+                        gap:2px;" class="fade-up">
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🚗</span>
+                  <h3>Private Sale Package</h3>
+                  <p>Perfect for selling your vehicle privately. Clean, well-lit images
+                     that show the car honestly and attractively.</p>
+                  <ul style="margin:0 0 20px 16px; font-size:0.85rem;
+                              color:var(--text-cream); line-height:2;">
+                     <li>1 hour outdoor shoot</li>
+                     <li>25 edited images</li>
+                     <li>Web-optimized delivery</li>
+                  </ul>
+                  <span class="service-price">$249</span>
+               </div>
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🏁</span>
+                  <h3>Enthusiast Package</h3>
+                  <p>For car lovers who want dramatic, creative images of their vehicle —
+                     lifestyle shots, detail work, and dynamic compositions.</p>
+                  <ul style="margin:0 0 20px 16px; font-size:0.85rem;
+                              color:var(--text-cream); line-height:2;">
+                     <li>2 hours, multiple locations</li>
+                     <li>50+ edited images</li>
+                     <li>High-res &amp; web delivery</li>
+                     <li>Detail shots included</li>
+                  </ul>
+                  <span class="service-price">$449</span>
+               </div>
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🏢</span>
+                  <h3>Dealership / Commercial</h3>
+                  <p>Ongoing or bulk automotive photography for dealerships and
+                     commercial clients. Contact for custom pricing on volume packages.</p>
+                  <ul style="margin:0 0 20px 16px; font-size:0.85rem;
+                              color:var(--text-cream); line-height:2;">
+                     <li>Volume pricing available</li>
+                     <li>Consistent style &amp; delivery</li>
+                     <li>Fast 24hr turnaround</li>
+                  </ul>
+                  <span class="service-price">Contact for Pricing</span>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Fine Art Prints -->
+      <section class="section section-dark" aria-labelledby="prints-heading">
+         <div class="container">
+            <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
+               <span class="section-eyebrow">Take It Home</span>
+               <h2 class="section-title" id="prints-heading">
+                  Fine Art <em>Prints</em>
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+               <p class="section-subtitle" style="margin:0 auto;">
+                  Select landscape and nature images are available as museum-quality
+                  fine art prints. Printed on archival media for lasting color and
+                  detail. Framed and unframed options available.
+               </p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+                        gap:2px; margin-bottom:60px;" class="fade-up">
+               <div style="background-color:var(--dark-mid); padding:32px 24px; text-align:center;
+                            border:1px solid var(--border-light);">
+                  <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem;
+                             color:var(--warm-white); margin-bottom:8px;">8 &times; 10</p>
+                  <p style="font-size:0.78rem; color:var(--text-light); margin-bottom:16px;">
+                     Unframed
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+                                color:var(--gold); font-style:italic;">$75</span>
+               </div>
+               <div style="background-color:var(--dark-mid); padding:32px 24px; text-align:center;
+                            border:1px solid var(--border-light);">
+                  <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem;
+                             color:var(--warm-white); margin-bottom:8px;">11 &times; 14</p>
+                  <p style="font-size:0.78rem; color:var(--text-light); margin-bottom:16px;">
+                     Unframed
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+                                color:var(--gold); font-style:italic;">$125</span>
+               </div>
+               <div style="background-color:var(--dark-mid); padding:32px 24px; text-align:center;
+                            border:1px solid var(--border-light);">
+                  <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem;
+                             color:var(--warm-white); margin-bottom:8px;">16 &times; 20</p>
+                  <p style="font-size:0.78rem; color:var(--text-light); margin-bottom:16px;">
+                     Unframed
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+                                color:var(--gold); font-style:italic;">$199</span>
+               </div>
+               <div style="background-color:var(--dark-mid); padding:32px 24px; text-align:center;
+                            border:1px solid var(--border-light);">
+                  <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem;
+                             color:var(--warm-white); margin-bottom:8px;">20 &times; 30</p>
+                  <p style="font-size:0.78rem; color:var(--text-light); margin-bottom:16px;">
+                     Unframed
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+                                color:var(--gold); font-style:italic;">$299</span>
+               </div>
+               <div style="background-color:var(--dark-mid); padding:32px 24px; text-align:center;
+                            border:1px solid var(--border-light);">
+                  <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem;
+                             color:var(--warm-white); margin-bottom:8px;">Custom Size</p>
+                  <p style="font-size:0.78rem; color:var(--text-light); margin-bottom:16px;">
+                     Framing available on all sizes
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+                                color:var(--gold); font-style:italic;">Inquire</span>
+               </div>
+            </div>
+
+            <div class="fade-up" style="text-align:center;">
+               <a href="gallery/landscapes.html" class="btn btn-outline" style="margin-right:16px;">
+                  Browse Landscapes
+               </a>
+               <a href="contact.html" class="btn btn-gold">Order a Print</a>
+            </div>
+         </div>
+      </section>
+
+      <!-- What to Expect -->
+      <section class="section section-black" aria-labelledby="process-heading">
+         <div class="container">
+            <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
+               <span class="section-eyebrow">The Process</span>
+               <h2 class="section-title" id="process-heading">
+                  What to <em>Expect</em>
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+                        gap:2px; max-width:900px; margin:0 auto;" class="fade-up">
+
+               <div style="background-color:var(--dark-mid); padding:36px 28px;
+                            border:1px solid var(--border-light); position:relative;">
+                  <div style="font-family:'Cormorant Garamond',serif; font-size:3rem;
+                               font-weight:300; color:var(--border); line-height:1;
+                               margin-bottom:16px;">01</div>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+                              color:var(--warm-white); margin-bottom:10px;">Reach Out</h3>
+                  <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Send me a message with your idea, date, and location. I'll get
+                     back to you within 24 hours.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:36px 28px;
+                            border:1px solid var(--border-light);">
+                  <div style="font-family:'Cormorant Garamond',serif; font-size:3rem;
+                               font-weight:300; color:var(--border); line-height:1;
+                               margin-bottom:16px;">02</div>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+                              color:var(--warm-white); margin-bottom:10px;">Plan Together</h3>
+                  <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     We'll discuss location, timing, outfits, and what you're hoping
+                     to capture. I'll help you plan for the best light.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:36px 28px;
+                            border:1px solid var(--border-light);">
+                  <div style="font-family:'Cormorant Garamond',serif; font-size:3rem;
+                               font-weight:300; color:var(--border); line-height:1;
+                               margin-bottom:16px;">03</div>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+                              color:var(--warm-white); margin-bottom:10px;">Shoot Day</h3>
+                  <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Relax and enjoy the process. I'll guide you through poses and
+                     timing — you just show up and be yourself.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:36px 28px;
+                            border:1px solid var(--border-light);">
+                  <div style="font-family:'Cormorant Garamond',serif; font-size:3rem;
+                               font-weight:300; color:var(--border); line-height:1;
+                               margin-bottom:16px;">04</div>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+                              color:var(--warm-white); margin-bottom:10px;">Gallery Delivery</h3>
+                  <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Your edited images are delivered via private online gallery within
+                     5–7 business days. Download and share at full resolution.
+                  </p>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section-dark" aria-labelledby="faq-heading">
+         <div class="container">
+            <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
+               <span class="section-eyebrow">Common Questions</span>
+               <h2 class="section-title" id="faq-heading">
+                  FAQ
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+            </div>
+
+            <div style="max-width:760px; margin:0 auto; display:flex;
+                        flex-direction:column; gap:2px;" class="fade-up">
+
+               <div style="background-color:var(--dark-mid); padding:28px 32px;
+                            border:1px solid var(--border-light);">
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:10px;">
+                     Do you travel for shoots?
+                  </h3>
+                  <p style="font-size:0.88rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Yes! I'm based in New Mexico but available for travel throughout the
+                     Southwest and beyond. Travel fees apply for shoots more than 50 miles
+                     from Albuquerque — contact me for details.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:28px 32px;
+                            border:1px solid var(--border-light);">
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:10px;">
+                     How do I book a session?
+                  </h3>
+                  <p style="font-size:0.88rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Send me a message through the contact page or email me directly.
+                     Sessions are held with a 50% deposit at booking, with the remainder
+                     due the day of the shoot.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:28px 32px;
+                            border:1px solid var(--border-light);">
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:10px;">
+                     What if the weather is bad?
+                  </h3>
+                  <p style="font-size:0.88rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Outdoor sessions can be rescheduled at no charge if weather makes
+                     shooting unsafe or impractical. We'll pick a new date that works
+                     for both of us.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:28px 32px;
+                            border:1px solid var(--border-light);">
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:10px;">
+                     How long until I receive my photos?
+                  </h3>
+                  <p style="font-size:0.88rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Portrait sessions are typically delivered within 5–7 business days.
+                     Real estate photography is delivered within 24 hours. Rush delivery
+                     is available — contact me for pricing.
+                  </p>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:28px 32px;
+                            border:1px solid var(--border-light);">
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:10px;">
+                     Can I request specific shots or styles?
+                  </h3>
+                  <p style="font-size:0.88rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                     Absolutely. I encourage clients to share inspiration images before
+                     the shoot so we're on the same page. That said, I always leave
+                     room for happy accidents — sometimes the best shots are unplanned.
+                  </p>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="position:relative; overflow:hidden; min-height:380px;
+                      display:flex; align-items:center; justify-content:center;
+                      text-align:center; padding:80px 40px;"
+               aria-labelledby="services-cta-heading">
+         <div style="position:absolute; inset:0; z-index:0;">
+            <img src="images/slideshow/slideshow-2.jpg" alt="" aria-hidden="true"
+                 style="width:100%; height:100%; object-fit:cover; opacity:0.3;">
+         </div>
+         <div style="position:absolute; inset:0; background:rgba(13,13,13,0.7); z-index:1;"></div>
+         <div style="position:relative; z-index:2; max-width:600px;" class="fade-up">
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,2.8rem);
+                       font-weight:300; color:var(--warm-white); margin-bottom:20px;
+                       line-height:1.3;" id="services-cta-heading">
+               Ready to Book<br><em style="color:var(--gold-light);">Your Session?</em>
+            </h2>
+            <p style="font-size:0.9rem; color:var(--text-cream); margin-bottom:36px;
+                      line-height:1.8;">
+               All sessions include professional editing and online gallery delivery.
+               Reach out and let's make something great together.
+            </p>
+            <a href="contact.html" class="btn btn-gold">Get In Touch</a>
+         </div>
+      </section>
+
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="footer-grid">
+            <div class="footer-brand">
+               <h3>B.D. Photography</h3>
+               <p>Timeless Journeys Through the Lens — fine art and portrait photography
+                  based in New Mexico.</p>
+            </div>
+            <div class="footer-col">
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery/index.html">Gallery</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4>Gallery</h4>
+               <ul>
+                  <li><a href="gallery/landscapes.html">Landscapes</a></li>
+                  <li><a href="gallery/nature.html">Nature</a></li>
+                  <li><a href="gallery/portraits.html">Portraits</a></li>
+                  <li><a href="gallery/travel.html">Travel</a></li>
+                  <li><a href="gallery/cars.html">Cars</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <p>&copy; 2026 B.D. Photography &mdash; All rights reserved.</p>
+            <p><a href="client/index.html" style="color:var(--text-light);">Client Portal</a></p>
+         </div>
+      </div>
+   </footer>
+
+   <style>
+      @media (max-width: 768px) {
+         .services-hero-text { padding: 0 24px 40px !important; }
+         div[style*="grid-template-columns:1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+         }
+      }
+   </style>
+
+   <script src="js/main.js"></script>
+</body>
+</html>

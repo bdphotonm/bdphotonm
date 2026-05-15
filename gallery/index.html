@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Gallery — B.D. Photography</title>
+   <meta name="description" content="Browse the full photography gallery from B.D. Photography — landscapes, nature, portraits, travel, cars, pets, and real estate.">
+   <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo">B.D.<span> Photography</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="../about.html">About</a></li>
+         <li><a href="../services.html">Services</a></li>
+         <li><a href="index.html" class="active" aria-current="page">Gallery</a></li>
+         <li><a href="../contact.html">Contact</a></li>
+         <li><a href="../client/index.html">Client Portal</a></li>
+      </ul>
+   </nav>
+
+   <!-- Page Hero -->
+   <header style="position:relative; height:60vh; min-height:400px; overflow:hidden;
+                  display:flex; align-items:flex-end; justify-content:flex-start;" role="banner">
+      <img src="../images/slideshow/slideshow-1.jpg"
+           alt="Photography gallery by B.D. Photography"
+           style="position:absolute; inset:0; width:100%; height:100%;
+                  object-fit:cover; object-position:center;">
+      <div style="position:absolute; inset:0;
+                  background:linear-gradient(to bottom, rgba(13,13,13,0.15) 0%, rgba(13,13,13,0.75) 100%);"></div>
+      <div class="gallery-hero-text" style="position:relative; z-index:1; padding:0 80px 60px;">
+         <span style="display:block; font-size:0.7rem; letter-spacing:0.3em;
+                      text-transform:uppercase; color:var(--gold); margin-bottom:12px;">
+            The Work
+         </span>
+         <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,5vw,4rem);
+                    font-weight:300; color:var(--warm-white); line-height:1.1;">
+            The <em style="font-style:italic; color:var(--gold-light);">Gallery</em>
+         </h1>
+      </div>
+   </header>
+
+   <main>
+
+      <!-- Category Grid -->
+      <section class="section section-dark" aria-labelledby="gallery-heading">
+         <div class="container">
+            <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
+               <span class="section-eyebrow">Browse By Category</span>
+               <h2 class="section-title" id="gallery-heading">
+                  Select a <em>Collection</em>
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+               <p class="section-subtitle" style="margin:0 auto;">
+                  Seven categories spanning landscapes, nature, portraits, travel,
+                  automotive, pets, and real estate. Click any category to explore.
+               </p>
+            </div>
+
+            <div class="category-grid fade-up">
+
+               <a href="landscapes.html" class="category-card" aria-label="View Landscapes gallery">
+                  <img src="../images/slideshow/slideshow-1.jpg" alt="Landscape photography — Grand Canyon">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Landscapes</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="nature.html" class="category-card" aria-label="View Nature gallery">
+                  <img src="../images/slideshow/slideshow-2.jpg" alt="Nature photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Nature</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="portraits.html" class="category-card" aria-label="View Portraits gallery">
+                  <div class="category-placeholder" aria-hidden="true">🎭</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Portraits</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="travel.html" class="category-card" aria-label="View Travel gallery">
+                  <img src="../images/slideshow/slideshow-4.jpg" alt="Travel photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Travel</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="cars.html" class="category-card" aria-label="View Cars gallery">
+                  <div class="category-placeholder" aria-hidden="true">🚗</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Cars</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="pets.html" class="category-card" aria-label="View Pets gallery">
+                  <div class="category-placeholder" aria-hidden="true">🐾</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Pets</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="realestate.html" class="category-card" aria-label="View Real Estate gallery">
+                  <div class="category-placeholder" aria-hidden="true">🏡</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Real Estate</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="../contact.html" class="category-card" aria-label="Book a session">
+                  <img src="../images/slideshow/slideshow-5.jpg" alt="Book a photography session">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Book a Session</h3>
+                     <span class="category-count">Get In Touch &rarr;</span>
+                  </div>
+               </a>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Recent Work — Mixed Masonry Preview -->
+      <section class="section section-black" aria-labelledby="recent-heading">
+         <div class="container">
+            <div class="fade-up">
+               <span class="section-eyebrow">Recent Work</span>
+               <h2 class="section-title" id="recent-heading">
+                  Latest <em>Images</em>
+               </h2>
+               <div class="section-divider"></div>
+               <p class="section-subtitle" style="margin-bottom:0;">
+                  A mix of recent work across categories. Click any image to view full size.
+               </p>
+            </div>
+
+            <!-- Masonry gallery — add your images here -->
+            <div class="gallery-grid" id="galleryGrid">
+
+               <div class="gallery-item" data-caption="Grand Canyon — South Rim">
+                  <img src="../images/slideshow/slideshow-1.jpg"
+                       alt="Grand Canyon South Rim landscape photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Grand Canyon &mdash; South Rim</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Golden Hour">
+                  <img src="../images/slideshow/slideshow-2.jpg"
+                       alt="Grand Canyon at golden hour">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Grand Canyon &mdash; Golden Hour</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Dramatic Light">
+                  <img src="../images/slideshow/slideshow-3.jpg"
+                       alt="Grand Canyon dramatic light and shadow">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Grand Canyon &mdash; Dramatic Light</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Vista">
+                  <img src="../images/slideshow/slideshow-4.jpg"
+                       alt="Grand Canyon wide vista">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Grand Canyon &mdash; Vista</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Panoramic">
+                  <img src="../images/slideshow/slideshow-5.jpg"
+                       alt="Grand Canyon panoramic view">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Grand Canyon &mdash; Panoramic</span>
+                  </div>
+               </div>
+
+               <!-- Add more images here as you build out the gallery -->
+               <!-- Pattern:
+               <div class="gallery-item" data-caption="Your Caption Here">
+                  <img src="../images/gallery/category/filename.jpg" alt="Descriptive alt text">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Your Caption Here</span>
+                  </div>
+               </div>
+               -->
+
+            </div>
+
+            <div class="fade-up" style="text-align:center; margin-top:48px;">
+               <a href="landscapes.html" class="btn btn-outline">
+                  View Landscapes Gallery
+               </a>
+            </div>
+         </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="background:linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 100%);
+                      padding:100px 40px; text-align:center;"
+               aria-labelledby="gallery-cta-heading">
+         <div class="fade-up" style="max-width:600px; margin:0 auto;">
+            <span style="display:block; font-size:0.7rem; letter-spacing:0.3em;
+                         text-transform:uppercase; color:var(--gold); margin-bottom:16px;">
+               Work With Me
+            </span>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem);
+                       font-weight:300; color:var(--warm-white); margin-bottom:20px;
+                       line-height:1.2;" id="gallery-cta-heading">
+               Like What You See?<br>
+               <em style="font-style:italic; color:var(--gold-light);">Let's Work Together.</em>
+            </h2>
+            <div style="width:48px; height:1px; background:var(--gold); margin:24px auto 32px;"></div>
+            <p style="font-size:0.95rem; font-weight:300; color:var(--text-cream);
+                      line-height:1.8; margin-bottom:40px;">
+               Booking portrait sessions, real estate photography, automotive shoots,
+               and fine art print orders throughout New Mexico and beyond.
+            </p>
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+               <a href="../contact.html" class="btn btn-gold">Book a Session</a>
+               <a href="../services.html" class="btn btn-outline">View Pricing</a>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="footer-grid">
+            <div class="footer-brand">
+               <h3>B.D. Photography</h3>
+               <p>Timeless Journeys Through the Lens — fine art and portrait photography
+                  based in New Mexico.</p>
+            </div>
+            <div class="footer-col">
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../about.html">About</a></li>
+                  <li><a href="index.html">Gallery</a></li>
+                  <li><a href="../services.html">Services</a></li>
+                  <li><a href="../contact.html">Contact</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4>Gallery</h4>
+               <ul>
+                  <li><a href="landscapes.html">Landscapes</a></li>
+                  <li><a href="nature.html">Nature</a></li>
+                  <li><a href="portraits.html">Portraits</a></li>
+                  <li><a href="travel.html">Travel</a></li>
+                  <li><a href="cars.html">Cars</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <p>&copy; 2026 B.D. Photography &mdash; All rights reserved.</p>
+            <p><a href="../client/index.html" style="color:var(--text-light);">Client Portal</a></p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Lightbox -->
+   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8592;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8594;</button>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+   </div>
+
+   <style>
+      @media (max-width: 768px) {
+         .gallery-hero-text { padding: 0 24px 40px !important; }
+      }
+   </style>
+
+   <script src="../js/main.js"></script>
+</body>
+</html>

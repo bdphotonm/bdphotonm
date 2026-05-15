@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Client Portal — B.D. Photography</title>
+   <meta name="description" content="Private client gallery portal for B.D. Photography clients.">
+   <meta name="robots" content="noindex, nofollow">
+   <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo">B.D.<span> Photography</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="../about.html">About</a></li>
+         <li><a href="../services.html">Services</a></li>
+         <li><a href="../gallery/index.html">Gallery</a></li>
+         <li><a href="../contact.html">Contact</a></li>
+         <li><a href="index.html" class="active" aria-current="page">Client Portal</a></li>
+      </ul>
+   </nav>
+
+   <!-- Login Screen -->
+   <div class="portal-wrap" id="portalLogin" aria-label="Client portal login">
+      <div class="portal-box">
+
+         <div style="font-size:2.5rem; margin-bottom:20px;" aria-hidden="true">✦</div>
+
+         <h1>Client Portal</h1>
+         <div style="width:36px; height:1px; background:var(--gold); margin:16px auto 24px;"></div>
+         <p>
+            Enter your gallery password to access your private photos.
+            Your password was provided in your delivery email.
+         </p>
+
+         <label for="portalPassword" class="sr-only">Gallery password</label>
+         <input type="password" id="portalPassword" class="portal-input"
+                placeholder="Enter password" aria-required="true"
+                autocomplete="current-password">
+
+         <p class="portal-error" id="portalError" role="alert" aria-live="polite">
+            Incorrect password. Please check your delivery email and try again.
+         </p>
+
+         <button class="btn btn-gold" id="portalSubmit" style="width:100%; font-size:0.82rem;">
+            Access Gallery ✦
+         </button>
+
+         <p style="margin-top:28px; font-size:0.78rem; color:var(--text-light);
+                   line-height:1.8;">
+            Don't have a password?
+            <a href="../contact.html"
+               style="color:var(--gold); border-bottom:1px solid rgba(201,169,110,0.3);">
+               Contact Brad
+            </a>
+            and reference your session date.
+         </p>
+
+      </div>
+   </div>
+
+   <!-- Gallery Area (hidden until logged in) -->
+   <div id="portalGallery" style="display:none;">
+
+      <!-- Portal Nav Bar -->
+      <div style="background-color:var(--black); border-bottom:1px solid var(--border-light);
+                  padding:16px 48px; display:flex; justify-content:space-between;
+                  align-items:center; margin-top:72px;" role="navigation"
+           aria-label="Client portal navigation">
+         <div>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                      color:var(--warm-white); margin:0 0 2px;">
+               Welcome back! ✦
+            </p>
+            <p style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase;
+                      color:var(--gold); margin:0;">
+               Your private gallery
+            </p>
+         </div>
+         <button id="portalLogout" class="btn btn-outline"
+                 style="font-size:0.72rem; padding:10px 20px;">
+            Log Out
+         </button>
+      </div>
+
+      <main>
+
+         <!-- Gallery Selector -->
+         <section style="background-color:var(--dark); padding:60px 0;"
+                  aria-labelledby="portal-heading">
+            <div class="container">
+               <div class="fade-up">
+                  <span class="section-eyebrow">Your Photos</span>
+                  <h2 class="section-title" id="portal-heading">
+                     Private <em>Gallery</em>
+                  </h2>
+                  <div class="section-divider"></div>
+                  <p class="section-subtitle" style="margin-bottom:48px;">
+                     Your edited images are ready. Click any photo to view full size.
+                     All images can be downloaded at full resolution from the viewer.
+                  </p>
+               </div>
+
+               <!-- Session Tabs — add/remove tabs for each client session -->
+               <div style="display:flex; gap:2px; margin-bottom:32px; flex-wrap:wrap;"
+                    role="tablist" aria-label="Gallery sessions" id="sessionTabs">
+                  <button class="portal-tab active" data-session="session1"
+                          role="tab" aria-selected="true" aria-controls="session1panel">
+                     Session 1
+                  </button>
+                  <button class="portal-tab" data-session="session2"
+                          role="tab" aria-selected="false" aria-controls="session2panel">
+                     Session 2
+                  </button>
+               </div>
+
+               <!-- Session 1 Panel -->
+               <div id="session1panel" class="session-panel" role="tabpanel"
+                    aria-labelledby="session1tab">
+                  <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;
+                             color:var(--text-light); margin-bottom:24px;">
+                     <!-- Update with actual session details -->
+                     Portrait Session &mdash; Date TBD &mdash; Location TBD
+                  </p>
+
+                  <div class="gallery-grid" id="clientGrid1">
+                     <!-- Add client photos here -->
+                     <!-- Pattern:
+                     <div class="gallery-item" data-caption="Your Caption">
+                        <img src="../images/clients/clientname/photo-01.jpg"
+                             alt="Client photo" loading="lazy">
+                        <div class="gallery-overlay">
+                           <span class="gallery-overlay-text">Your Caption</span>
+                        </div>
+                     </div>
+                     -->
+
+                     <!-- Placeholder cards shown until real photos added -->
+                     <div class="gallery-placeholder" style="height:280px;">
+                        <div style="text-align:center;">
+                           <div style="font-size:2rem; margin-bottom:10px;" aria-hidden="true">🖼</div>
+                           <p style="margin:0; font-size:0.72rem; letter-spacing:0.1em;
+                                     text-transform:uppercase;">
+                              Add client photos here
+                           </p>
+                           <p style="margin:6px 0 0; font-size:0.65rem; opacity:0.6;">
+                              images/clients/clientname/
+                           </p>
+                        </div>
+                     </div>
+                     <div class="gallery-placeholder" style="height:380px;">
+                        <div style="text-align:center; font-size:0.72rem; letter-spacing:0.1em;
+                                    text-transform:uppercase; color:var(--text-light);">
+                           Photo 2
+                        </div>
+                     </div>
+                     <div class="gallery-placeholder" style="height:220px;">
+                        <div style="text-align:center; font-size:0.72rem; letter-spacing:0.1em;
+                                    text-transform:uppercase; color:var(--text-light);">
+                           Photo 3
+                        </div>
+                     </div>
+                     <div class="gallery-placeholder" style="height:320px;">
+                        <div style="text-align:center; font-size:0.72rem; letter-spacing:0.1em;
+                                    text-transform:uppercase; color:var(--text-light);">
+                           Photo 4
+                        </div>
+                     </div>
+                     <div class="gallery-placeholder" style="height:260px;">
+                        <div style="text-align:center; font-size:0.72rem; letter-spacing:0.1em;
+                                    text-transform:uppercase; color:var(--text-light);">
+                           Photo 5
+                        </div>
+                     </div>
+                     <div class="gallery-placeholder" style="height:340px;">
+                        <div style="text-align:center; font-size:0.72rem; letter-spacing:0.1em;
+                                    text-transform:uppercase; color:var(--text-light);">
+                           Photo 6
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+               <!-- Session 2 Panel (hidden by default) -->
+               <div id="session2panel" class="session-panel" style="display:none;"
+                    role="tabpanel" aria-labelledby="session2tab">
+                  <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;
+                             color:var(--text-light); margin-bottom:24px;">
+                     Session 2 &mdash; Date TBD &mdash; Location TBD
+                  </p>
+                  <div class="gallery-grid">
+                     <div class="gallery-placeholder" style="height:280px;">
+                        <div style="text-align:center;">
+                           <div style="font-size:2rem; margin-bottom:10px;" aria-hidden="true">🖼</div>
+                           <p style="margin:0; font-size:0.72rem; letter-spacing:0.1em;
+                                     text-transform:uppercase;">
+                              Session 2 photos here
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </section>
+
+         <!-- Download Info -->
+         <section style="background-color:var(--black); padding:60px 0;"
+                  aria-labelledby="download-heading">
+            <div class="container">
+               <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+                           gap:2px; max-width:900px; margin:0 auto;" class="fade-up">
+
+                  <div style="background-color:var(--dark-mid); padding:32px 28px;
+                               border:1px solid var(--border-light);">
+                     <span style="font-size:1.8rem; display:block; margin-bottom:14px;"
+                           aria-hidden="true">📥</span>
+                     <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                 color:var(--warm-white); margin-bottom:8px;"
+                         id="download-heading">Downloading</h3>
+                     <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                        Click any image to open it full size, then right-click and
+                        choose "Save Image As" to download at full resolution.
+                     </p>
+                  </div>
+
+                  <div style="background-color:var(--dark-mid); padding:32px 28px;
+                               border:1px solid var(--border-light);">
+                     <span style="font-size:1.8rem; display:block; margin-bottom:14px;"
+                           aria-hidden="true">🖨</span>
+                     <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                 color:var(--warm-white); margin-bottom:8px;">Printing</h3>
+                     <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                        All images include a personal print release. For professional
+                        printing, I recommend Mpix or Bay Photo. Need a larger
+                        fine art print? <a href="../contact.html"
+                        style="color:var(--gold);">Ask me directly.</a>
+                     </p>
+                  </div>
+
+                  <div style="background-color:var(--dark-mid); padding:32px 28px;
+                               border:1px solid var(--border-light);">
+                     <span style="font-size:1.8rem; display:block; margin-bottom:14px;"
+                           aria-hidden="true">📅</span>
+                     <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                 color:var(--warm-white); margin-bottom:8px;">Gallery Expiry</h3>
+                     <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                        Your gallery will be available here for 90 days from delivery.
+                        Please download your images before then — I recommend backing
+                        them up in at least two places.
+                     </p>
+                  </div>
+
+                  <div style="background-color:var(--dark-mid); padding:32px 28px;
+                               border:1px solid var(--border-light);">
+                     <span style="font-size:1.8rem; display:block; margin-bottom:14px;"
+                           aria-hidden="true">💬</span>
+                     <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                 color:var(--warm-white); margin-bottom:8px;">Questions?</h3>
+                     <p style="font-size:0.85rem; color:var(--text-cream); line-height:1.8; margin:0;">
+                        Something missing or not looking right? 
+                        <a href="../contact.html" style="color:var(--gold);">
+                           Send me a message
+                        </a>
+                        and I'll sort it out quickly.
+                     </p>
+                  </div>
+
+               </div>
+            </div>
+         </section>
+
+      </main>
+
+      <!-- Footer -->
+      <footer>
+         <div class="container">
+            <div class="footer-grid">
+               <div class="footer-brand">
+                  <h3>B.D. Photography</h3>
+                  <p>Timeless Journeys Through the Lens — fine art and portrait photography
+                     based in New Mexico.</p>
+               </div>
+               <div class="footer-col">
+                  <h4>Navigate</h4>
+                  <ul>
+                     <li><a href="../index.html">Home</a></li>
+                     <li><a href="../about.html">About</a></li>
+                     <li><a href="../gallery/index.html">Gallery</a></li>
+                     <li><a href="../services.html">Services</a></li>
+                     <li><a href="../contact.html">Contact</a></li>
+                  </ul>
+               </div>
+               <div class="footer-col">
+                  <h4>Gallery</h4>
+                  <ul>
+                     <li><a href="../gallery/landscapes.html">Landscapes</a></li>
+                     <li><a href="../gallery/nature.html">Nature</a></li>
+                     <li><a href="../gallery/portraits.html">Portraits</a></li>
+                     <li><a href="../gallery/travel.html">Travel</a></li>
+                     <li><a href="../gallery/cars.html">Cars</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer-bottom">
+               <p>&copy; 2026 B.D. Photography &mdash; All rights reserved.</p>
+            </div>
+         </div>
+      </footer>
+
+   </div>
+
+   <!-- Lightbox -->
+   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8592;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8594;</button>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+   </div>
+
+   <style>
+      .sr-only {
+         position:absolute; width:1px; height:1px;
+         padding:0; margin:-1px; overflow:hidden;
+         clip:rect(0,0,0,0); white-space:nowrap; border:0;
+      }
+
+      .portal-tab {
+         font-family: 'Lato', sans-serif;
+         font-size: 0.75rem;
+         font-weight: 700;
+         letter-spacing: 0.15em;
+         text-transform: uppercase;
+         padding: 12px 24px;
+         border: 1px solid var(--border-light);
+         background-color: var(--dark-mid);
+         color: var(--text-cream);
+         cursor: pointer;
+         transition: all 0.2s;
+      }
+
+      .portal-tab:hover {
+         border-color: var(--border);
+         color: var(--gold-light);
+      }
+
+      .portal-tab.active {
+         background-color: var(--gold);
+         color: var(--dark);
+         border-color: var(--gold);
+      }
+
+      @media (max-width: 768px) {
+         div[style*="padding:16px 48px"] {
+            padding: 16px 20px !important;
+         }
+      }
+   </style>
+
+   <script src="../js/main.js"></script>
+</body>
+</html>

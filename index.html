@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>B.D. Photography | Timeless Journeys Through the Lens</title>
+   <meta name="description" content="B.D. Photography — fine art and portrait photography based in New Mexico. Specializing in landscapes, nature, portraits, and more.">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">B.D.<span> Photography</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="about.html">About</a></li>
+         <li><a href="services.html">Services</a></li>
+         <li><a href="gallery/index.html">Gallery</a></li>
+         <li><a href="contact.html">Contact</a></li>
+         <li><a href="client/index.html">Client Portal</a></li>
+      </ul>
+   </nav>
+
+   <!-- Hero Slideshow -->
+   <header class="hero" aria-label="Featured photography slideshow">
+      <div class="hero-slides" id="heroSlides">
+         <div class="hero-slide active">
+            <img src="images/slideshow/slideshow-1.jpg"
+                 alt="Grand Canyon landscape photography by B.D. Photography">
+         </div>
+         <div class="hero-slide">
+            <img src="images/slideshow/slideshow-2.jpg"
+                 alt="Grand Canyon at golden hour by B.D. Photography">
+         </div>
+         <div class="hero-slide">
+            <img src="images/slideshow/slideshow-3.jpg"
+                 alt="Grand Canyon dramatic light by B.D. Photography">
+         </div>
+         <div class="hero-slide">
+            <img src="images/slideshow/slideshow-4.jpg"
+                 alt="Grand Canyon vista by B.D. Photography">
+         </div>
+         <div class="hero-slide">
+            <img src="images/slideshow/slideshow-5.jpg"
+                 alt="Grand Canyon panoramic by B.D. Photography">
+         </div>
+      </div>
+
+      <div class="hero-content">
+         <p class="hero-eyebrow">New Mexico &mdash; Est. 2024</p>
+         <h1 class="hero-title">
+            Timeless Journeys<br><em>Through the Lens</em>
+         </h1>
+         <p class="hero-tagline">Fine art photography &mdash; landscapes, nature, portraits &amp; beyond</p>
+         <div class="hero-cta">
+            <a href="gallery/index.html" class="btn btn-gold">View Gallery</a>
+            <a href="contact.html" class="btn btn-outline">Book a Session</a>
+         </div>
+      </div>
+
+      <div class="hero-dots" role="group" aria-label="Slideshow controls">
+         <button class="hero-dot active" data-index="0" aria-label="Slide 1"></button>
+         <button class="hero-dot" data-index="1" aria-label="Slide 2"></button>
+         <button class="hero-dot" data-index="2" aria-label="Slide 3"></button>
+         <button class="hero-dot" data-index="3" aria-label="Slide 4"></button>
+         <button class="hero-dot" data-index="4" aria-label="Slide 5"></button>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+         <div class="scroll-line"></div>
+         <span>Scroll</span>
+      </div>
+   </header>
+
+   <main>
+
+      <!-- Intro -->
+      <section class="section section-dark" aria-labelledby="intro-heading">
+         <div class="container">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+
+               <div class="fade-up">
+                  <span class="section-eyebrow">The Photographer</span>
+                  <h2 class="section-title" id="intro-heading">
+                     Capturing the World<br><em>As It Truly Is</em>
+                  </h2>
+                  <div class="section-divider"></div>
+                  <p class="section-subtitle">
+                     Based in New Mexico, I travel to find the moments that most people
+                     walk past — the light just after sunrise, the expression between poses,
+                     the landscape that makes you stop breathing for a second.
+                  </p>
+                  <p class="section-subtitle" style="margin-top:16px;">
+                     Whether it's the vast scale of the Grand Canyon or the quiet intimacy
+                     of a portrait session, every image is built around one goal:
+                     to show you something real.
+                  </p>
+                  <a href="about.html" class="btn btn-outline" style="margin-top:36px;">
+                     Read My Story
+                  </a>
+               </div>
+
+               <div class="fade-up" style="position:relative;">
+                  <div style="aspect-ratio:4/5; background-color:var(--dark-mid);
+                              overflow:hidden; display:flex; align-items:center;
+                              justify-content:center; flex-direction:column;
+                              gap:12px; color:var(--text-light);">
+                     <span style="font-size:3rem;">📷</span>
+                     <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase;">
+                        Add your photo here
+                     </span>
+                     <span style="font-size:0.65rem; opacity:0.6;">images/about-portrait.jpg</span>
+                  </div>
+                  <div style="position:absolute; top:-12px; right:-12px; bottom:12px; left:12px;
+                              border:1px solid var(--border); z-index:-1; pointer-events:none;"></div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Featured Work -->
+      <section class="section section-black" aria-labelledby="featured-heading">
+         <div class="container">
+            <div class="fade-up">
+               <span class="section-eyebrow">Selected Work</span>
+               <h2 class="section-title" id="featured-heading">Recent <em>Favorites</em></h2>
+               <div class="section-divider"></div>
+            </div>
+
+            <div class="featured-grid fade-up">
+               <div class="featured-main" onclick="window.location='gallery/landscapes.html'"
+                    role="link" tabindex="0" aria-label="View Landscapes gallery"
+                    onkeydown="if(event.key==='Enter')window.location='gallery/landscapes.html'">
+                  <img src="images/slideshow/slideshow-1.jpg" alt="Grand Canyon landscape">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Landscapes &rarr;</span>
+                  </div>
+               </div>
+               <div class="featured-secondary" onclick="window.location='gallery/nature.html'"
+                    role="link" tabindex="0" aria-label="View Nature gallery"
+                    onkeydown="if(event.key==='Enter')window.location='gallery/nature.html'">
+                  <img src="images/slideshow/slideshow-2.jpg" alt="Nature photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Nature &rarr;</span>
+                  </div>
+               </div>
+               <div class="featured-secondary" onclick="window.location='gallery/travel.html'"
+                    role="link" tabindex="0" aria-label="View Travel gallery"
+                    onkeydown="if(event.key==='Enter')window.location='gallery/travel.html'">
+                  <img src="images/slideshow/slideshow-3.jpg" alt="Travel photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Travel &rarr;</span>
+                  </div>
+               </div>
+            </div>
+
+            <div class="fade-up" style="text-align:center; margin-top:48px;">
+               <a href="gallery/index.html" class="btn btn-outline">View Full Gallery</a>
+            </div>
+         </div>
+      </section>
+
+      <!-- Gallery Categories -->
+      <section class="section section-dark" aria-labelledby="categories-heading">
+         <div class="container">
+            <div class="fade-up">
+               <span class="section-eyebrow">Browse By Category</span>
+               <h2 class="section-title" id="categories-heading">
+                  Explore the <em>Collection</em>
+               </h2>
+               <div class="section-divider"></div>
+            </div>
+
+            <div class="category-grid fade-up">
+
+               <a href="gallery/landscapes.html" class="category-card" aria-label="Landscapes gallery">
+                  <img src="images/slideshow/slideshow-1.jpg" alt="Landscape photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Landscapes</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/nature.html" class="category-card" aria-label="Nature gallery">
+                  <img src="images/slideshow/slideshow-2.jpg" alt="Nature photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Nature</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/portraits.html" class="category-card" aria-label="Portraits gallery">
+                  <div class="category-placeholder" aria-hidden="true">🎭</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Portraits</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/travel.html" class="category-card" aria-label="Travel gallery">
+                  <img src="images/slideshow/slideshow-4.jpg" alt="Travel photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Travel</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/cars.html" class="category-card" aria-label="Cars gallery">
+                  <div class="category-placeholder" aria-hidden="true">🚗</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Cars</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/pets.html" class="category-card" aria-label="Pets gallery">
+                  <div class="category-placeholder" aria-hidden="true">🐾</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Pets</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/realestate.html" class="category-card" aria-label="Real Estate gallery">
+                  <div class="category-placeholder" aria-hidden="true">🏡</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Real Estate</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+
+               <a href="gallery/index.html" class="category-card" aria-label="View all galleries">
+                  <img src="images/slideshow/slideshow-5.jpg" alt="All photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">View All</h3>
+                     <span class="category-count">Full Gallery &rarr;</span>
+                  </div>
+               </a>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Services Teaser -->
+      <section class="section section-black" aria-labelledby="services-heading">
+         <div class="container">
+            <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
+               <span class="section-eyebrow">Work With Me</span>
+               <h2 class="section-title" id="services-heading">
+                  Photography <em>Services</em>
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+               <p class="section-subtitle" style="margin:0 auto;">
+                  From intimate portrait sessions to commercial real estate photography,
+                  every shoot gets the same attention to light, moment, and story.
+               </p>
+            </div>
+
+            <div class="services-grid fade-up">
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🎭</span>
+                  <h3>Portraits</h3>
+                  <p>Individual, couple, and family sessions. Studio or on-location
+                     across New Mexico. Natural light and off-camera flash available.</p>
+                  <span class="service-price">From $150</span>
+               </div>
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🏡</span>
+                  <h3>Real Estate</h3>
+                  <p>Fast turnaround real estate photography for agents and homeowners.
+                     MLS-ready images delivered within 24 hours.</p>
+                  <span class="service-price">From $199</span>
+               </div>
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🚗</span>
+                  <h3>Automotive</h3>
+                  <p>Detail and lifestyle automotive photography for private sellers,
+                     dealerships, and enthusiasts. Studio or outdoor locations.</p>
+                  <span class="service-price">From $249</span>
+               </div>
+               <div class="service-card">
+                  <span class="service-icon" aria-hidden="true">🌄</span>
+                  <h3>Fine Art Prints</h3>
+                  <p>Museum-quality fine art prints of select landscape and nature images.
+                     Multiple sizes, framed or unframed, on archival media.</p>
+                  <span class="service-price">From $75</span>
+               </div>
+            </div>
+
+            <div class="fade-up" style="text-align:center; margin-top:48px;">
+               <a href="services.html" class="btn btn-gold">View All Services &amp; Pricing</a>
+            </div>
+         </div>
+      </section>
+
+      <!-- Quote Section -->
+      <section style="position:relative; overflow:hidden; min-height:420px;
+                      display:flex; align-items:center; justify-content:center;
+                      text-align:center; padding:80px 40px;"
+               aria-label="Inspirational quote">
+         <div style="position:absolute; inset:0; z-index:0;">
+            <img src="images/slideshow/slideshow-5.jpg" alt="" aria-hidden="true"
+                 style="width:100%; height:100%; object-fit:cover; opacity:0.35;">
+         </div>
+         <div style="position:absolute; inset:0; background:rgba(13,13,13,0.65); z-index:1;"></div>
+         <div style="position:relative; z-index:2; max-width:700px;" class="fade-up">
+            <p style="font-family:'Cormorant Garamond',serif;
+                      font-size:clamp(1.6rem,3.5vw,2.8rem); font-weight:300;
+                      font-style:italic; color:var(--warm-white);
+                      line-height:1.4; margin-bottom:32px;">
+               "Photography is the story I fail to put into words."
+            </p>
+            <p style="font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase;
+                      color:var(--gold); margin-bottom:40px;">
+               &mdash; Destin Sparks
+            </p>
+            <a href="contact.html" class="btn btn-gold">Book a Session</a>
+         </div>
+      </section>
+
+      <!-- Quick Contact -->
+      <section class="section section-dark" aria-labelledby="contact-teaser-heading">
+         <div class="container">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
+
+               <div class="fade-up">
+                  <span class="section-eyebrow">Get In Touch</span>
+                  <h2 class="section-title" id="contact-teaser-heading">
+                     Let's Create<br><em>Something Together</em>
+                  </h2>
+                  <div class="section-divider"></div>
+                  <p class="section-subtitle">
+                     Whether you're looking for portrait sessions, real estate photography,
+                     or a fine art print — I'd love to hear about your project.
+                  </p>
+                  <div style="margin-top:36px; display:flex; flex-direction:column; gap:20px;">
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Email</span>
+                        <span class="contact-detail-value">
+                           <a href="mailto:brad@bdphotonm.com"
+                              style="color:var(--cream);"
+                              onmouseover="this.style.color='var(--gold)'"
+                              onmouseout="this.style.color='var(--cream)'">
+                              brad@bdphotonm.com
+                           </a>
+                        </span>
+                     </div>
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Location</span>
+                        <span class="contact-detail-value">New Mexico, USA</span>
+                     </div>
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Availability</span>
+                        <span class="contact-detail-value">Currently Booking 2026</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="btn btn-outline" style="margin-top:36px;">
+                     Full Contact Page
+                  </a>
+               </div>
+
+               <!-- Quick Form -->
+               <div class="fade-up">
+                  <form id="quickContactForm" novalidate aria-label="Quick contact form">
+                     <div class="form-group">
+                        <label for="qcName">Your Name</label>
+                        <input type="text" id="qcName" name="name"
+                               placeholder="Jane Smith" aria-required="true">
+                        <p class="error-msg" id="qcNameError" role="alert">
+                           Please enter your name.
+                        </p>
+                     </div>
+                     <div class="form-group">
+                        <label for="qcEmail">Email Address</label>
+                        <input type="email" id="qcEmail" name="email"
+                               placeholder="jane@email.com" aria-required="true">
+                        <p class="error-msg" id="qcEmailError" role="alert">
+                           Please enter a valid email address.
+                        </p>
+                     </div>
+                     <div class="form-group">
+                        <label for="qcType">Session Type</label>
+                        <select id="qcType" name="type" aria-required="true">
+                           <option value="">Select a service...</option>
+                           <option value="portrait">Portrait Session</option>
+                           <option value="realestate">Real Estate</option>
+                           <option value="automotive">Automotive</option>
+                           <option value="print">Fine Art Print</option>
+                           <option value="other">Other / General Inquiry</option>
+                        </select>
+                        <p class="error-msg" id="qcTypeError" role="alert">
+                           Please select a session type.
+                        </p>
+                     </div>
+                     <div class="form-group">
+                        <label for="qcMessage">Message</label>
+                        <textarea id="qcMessage" name="message" aria-required="true"
+                                  placeholder="Tell me about what you have in mind..."
+                                  style="min-height:80px;"></textarea>
+                        <p class="error-msg" id="qcMessageError" role="alert">
+                           Please enter a message (at least 10 characters).
+                        </p>
+                     </div>
+                     <button type="submit" class="btn btn-gold" id="qcSubmitBtn"
+                             style="width:100%;">
+                        Send Message
+                     </button>
+                     <div class="form-success" id="qcFormSuccess" role="alert" aria-live="polite">
+                        <p>Thank you &mdash; I'll be in touch soon. ✦</p>
+                     </div>
+                  </form>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="footer-grid">
+            <div class="footer-brand">
+               <h3>B.D. Photography</h3>
+               <p>Timeless Journeys Through the Lens — fine art and portrait photography
+                  based in New Mexico.</p>
+            </div>
+            <div class="footer-col">
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery/index.html">Gallery</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4>Gallery</h4>
+               <ul>
+                  <li><a href="gallery/landscapes.html">Landscapes</a></li>
+                  <li><a href="gallery/nature.html">Nature</a></li>
+                  <li><a href="gallery/portraits.html">Portraits</a></li>
+                  <li><a href="gallery/travel.html">Travel</a></li>
+                  <li><a href="gallery/cars.html">Cars</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <p>&copy; 2026 B.D. Photography &mdash; All rights reserved.</p>
+            <p><a href="client/index.html" style="color:var(--text-light);">Client Portal</a></p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Lightbox -->
+   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8592;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8594;</button>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+   </div>
+
+   <style>
+      @media (max-width: 768px) {
+         div[style*="grid-template-columns:1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+         }
+      }
+   </style>
+
+   <script src="js/main.js"></script>
+</body>
+</html>

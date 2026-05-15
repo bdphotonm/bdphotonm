@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact & Booking — B.D. Photography</title>
+   <meta name="description" content="Book a photography session or inquire about prints with B.D. Photography — based in New Mexico, available throughout the Southwest.">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">B.D.<span> Photography</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="about.html">About</a></li>
+         <li><a href="services.html">Services</a></li>
+         <li><a href="gallery/index.html">Gallery</a></li>
+         <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+         <li><a href="client/index.html">Client Portal</a></li>
+      </ul>
+   </nav>
+
+   <!-- Page Hero -->
+   <header style="position:relative; height:55vh; min-height:360px; overflow:hidden;
+                  display:flex; align-items:flex-end; justify-content:flex-start;" role="banner">
+      <img src="images/slideshow/slideshow-5.jpg"
+           alt="Photography by B.D. Photography"
+           style="position:absolute; inset:0; width:100%; height:100%;
+                  object-fit:cover; object-position:center;">
+      <div style="position:absolute; inset:0;
+                  background:linear-gradient(to bottom, rgba(13,13,13,0.15) 0%, rgba(13,13,13,0.8) 100%);"></div>
+      <div class="contact-hero-text" style="position:relative; z-index:1; padding:0 80px 52px;">
+         <span style="display:block; font-size:0.7rem; letter-spacing:0.3em;
+                      text-transform:uppercase; color:var(--gold); margin-bottom:10px;">
+            Get In Touch
+         </span>
+         <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4.5vw,3.8rem);
+                    font-weight:300; color:var(--warm-white); line-height:1.1;">
+            Book a <em style="font-style:italic; color:var(--gold-light);">Session</em>
+         </h1>
+      </div>
+   </header>
+
+   <main>
+
+      <!-- Main Contact Section -->
+      <section class="section section-dark" aria-labelledby="contact-heading">
+         <div class="container">
+            <div class="contact-grid">
+
+               <!-- Contact Info -->
+               <div class="fade-up">
+                  <span class="section-eyebrow">Reach Out</span>
+                  <h2 style="font-family:'Cormorant Garamond',serif;
+                             font-size:clamp(1.8rem,3vw,2.6rem); font-weight:300;
+                             color:var(--warm-white); margin-bottom:16px; line-height:1.2;"
+                      id="contact-heading">
+                     Let's Make<br><em style="font-style:italic; color:var(--gold);">
+                     Something Great</em>
+                  </h2>
+                  <div class="section-divider"></div>
+                  <p style="font-size:0.9rem; font-weight:300; color:var(--text-cream);
+                             line-height:1.9; margin-bottom:36px;">
+                     Whether you're booking a portrait session, need real estate photography,
+                     want to commission an automotive shoot, or are interested in a fine art
+                     print — I'd love to hear from you. Fill out the form and I'll get back
+                     to you within 24 hours.
+                  </p>
+
+                  <div class="contact-detail">
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Email</span>
+                        <span class="contact-detail-value">
+                           <a href="mailto:brad@bdphotonm.com"
+                              style="color:var(--cream); transition:color 0.2s;"
+                              onmouseover="this.style.color='var(--gold)'"
+                              onmouseout="this.style.color='var(--cream)'">
+                              brad@bdphotonm.com
+                           </a>
+                        </span>
+                     </div>
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Location</span>
+                        <span class="contact-detail-value">New Mexico, USA</span>
+                     </div>
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Service Area</span>
+                        <span class="contact-detail-value">
+                           New Mexico &amp; Southwest<br>
+                           <span style="font-size:0.85rem; color:var(--text-light);">
+                              Travel available throughout the US
+                           </span>
+                        </span>
+                     </div>
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Response Time</span>
+                        <span class="contact-detail-value">Within 24 hours</span>
+                     </div>
+                     <div class="contact-detail-item">
+                        <span class="contact-detail-label">Availability</span>
+                        <span class="contact-detail-value">Currently Booking 2026</span>
+                     </div>
+                  </div>
+
+                  <!-- What to include -->
+                  <div style="background-color:var(--dark-mid); border:1px solid var(--border-light);
+                              padding:24px 28px; margin-top:8px;">
+                     <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+                                 color:var(--warm-white); margin-bottom:14px; font-weight:400;">
+                        What to Include in Your Message
+                     </h3>
+                     <ul style="font-size:0.85rem; color:var(--text-cream); line-height:2.2;
+                                 margin:0; padding:0; list-style:none;">
+                        <li style="display:flex; gap:10px; align-items:baseline;">
+                           <span style="color:var(--gold); flex-shrink:0;">✦</span>
+                           Type of session you're looking for
+                        </li>
+                        <li style="display:flex; gap:10px; align-items:baseline;">
+                           <span style="color:var(--gold); flex-shrink:0;">✦</span>
+                           Preferred date(s) or timeframe
+                        </li>
+                        <li style="display:flex; gap:10px; align-items:baseline;">
+                           <span style="color:var(--gold); flex-shrink:0;">✦</span>
+                           Location or area you have in mind
+                        </li>
+                        <li style="display:flex; gap:10px; align-items:baseline;">
+                           <span style="color:var(--gold); flex-shrink:0;">✦</span>
+                           Number of people (for portrait sessions)
+                        </li>
+                        <li style="display:flex; gap:10px; align-items:baseline;">
+                           <span style="color:var(--gold); flex-shrink:0;">✦</span>
+                           Any inspiration images or ideas you have
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+               <!-- Contact Form -->
+               <div class="fade-up">
+                  <form id="contactForm" novalidate aria-label="Contact and booking form"
+                        name="contact" method="POST" data-netlify="true">
+
+                     <!-- Netlify hidden field -->
+                     <input type="hidden" name="form-name" value="contact">
+
+                     <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName"
+                               placeholder="Jane" aria-required="true"
+                               autocomplete="given-name">
+                        <p class="error-msg" id="firstNameError" role="alert">
+                           Please enter your first name.
+                        </p>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName"
+                               placeholder="Smith" aria-required="true"
+                               autocomplete="family-name">
+                        <p class="error-msg" id="lastNameError" role="alert">
+                           Please enter your last name.
+                        </p>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="jane@email.com" aria-required="true"
+                               autocomplete="email">
+                        <p class="error-msg" id="emailError" role="alert">
+                           Please enter a valid email address.
+                        </p>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="phone">Phone Number <span style="color:var(--text-light); font-size:0.75em;">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="(505) 555-0100"
+                               autocomplete="tel">
+                        <p class="error-msg" id="phoneError" role="alert">
+                           Please enter a valid phone number.
+                        </p>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="sessionType">Session Type</label>
+                        <select id="sessionType" name="sessionType" aria-required="true">
+                           <option value="">Select a service...</option>
+                           <option value="portrait-mini">Portrait — Mini Session ($150)</option>
+                           <option value="portrait-standard">Portrait — Standard Session ($250)</option>
+                           <option value="portrait-premium">Portrait — Premium Session ($400)</option>
+                           <option value="realestate">Real Estate Photography</option>
+                           <option value="automotive">Automotive Photography</option>
+                           <option value="print">Fine Art Print Inquiry</option>
+                           <option value="other">Other / General Inquiry</option>
+                        </select>
+                        <p class="error-msg" id="sessionTypeError" role="alert">
+                           Please select a session type.
+                        </p>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="preferredDate">Preferred Date <span style="color:var(--text-light); font-size:0.75em;">(optional)</span></label>
+                        <input type="text" id="preferredDate" name="preferredDate"
+                               placeholder="e.g. June 2026, weekends preferred">
+                     </div>
+
+                     <div class="form-group">
+                        <label for="location">Location / Area</label>
+                        <input type="text" id="location" name="location"
+                               placeholder="e.g. Albuquerque, Santa Fe, outdoors..."
+                               aria-required="true">
+                        <p class="error-msg" id="locationError" role="alert">
+                           Please enter a location or area.
+                        </p>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="message">Tell Me More</label>
+                        <textarea id="message" name="message" aria-required="true"
+                                  placeholder="Share any details, ideas, or inspiration you have in mind..."></textarea>
+                        <p class="error-msg" id="messageError" role="alert">
+                           Please enter a message (at least 10 characters).
+                        </p>
+                     </div>
+
+                     <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:28px;">
+                        <input type="checkbox" id="newsletter" name="newsletter"
+                               style="width:auto; margin-top:3px; accent-color:var(--gold);
+                                      flex-shrink:0; cursor:pointer;">
+                        <label for="newsletter" style="font-size:0.82rem; color:var(--text-cream);
+                                                        font-weight:300; letter-spacing:0.03em;
+                                                        text-transform:none; cursor:pointer;">
+                           Sign me up for occasional updates — new work, availability
+                           notices, and print releases. No spam, ever.
+                        </label>
+                     </div>
+
+                     <button type="submit" id="submitBtn" class="btn btn-gold"
+                             style="width:100%; font-size:0.85rem; padding:16px;">
+                        Send Message ✦
+                     </button>
+
+                     <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+                        <p>Thank you — I'll be in touch within 24 hours. ✦</p>
+                     </div>
+
+                  </form>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Session Types Quick Ref -->
+      <section class="section section-black" aria-labelledby="sessions-heading">
+         <div class="container">
+            <div class="fade-up" style="text-align:center; max-width:600px;
+                                         margin:0 auto 52px;">
+               <span class="section-eyebrow">Quick Reference</span>
+               <h2 class="section-title" id="sessions-heading">
+                  Session <em>Types</em>
+               </h2>
+               <div class="section-divider" style="margin:24px auto;"></div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+                        gap:2px; max-width:1000px; margin:0 auto;" class="fade-up">
+
+               <div style="background-color:var(--dark-mid); padding:32px 24px;
+                            border:1px solid var(--border-light); text-align:center;">
+                  <span style="font-size:2rem; display:block; margin-bottom:14px;" aria-hidden="true">🎭</span>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:8px;">Portraits</h3>
+                  <p style="font-size:0.82rem; color:var(--text-cream); margin-bottom:12px;
+                             line-height:1.7;">
+                     Individual, couple &amp; family sessions. Studio or on-location.
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; color:var(--gold);
+                                font-style:italic; font-size:1.1rem;">From $150</span>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:32px 24px;
+                            border:1px solid var(--border-light); text-align:center;">
+                  <span style="font-size:2rem; display:block; margin-bottom:14px;" aria-hidden="true">🏡</span>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:8px;">Real Estate</h3>
+                  <p style="font-size:0.82rem; color:var(--text-cream); margin-bottom:12px;
+                             line-height:1.7;">
+                     MLS-ready photos delivered within 24 hours.
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; color:var(--gold);
+                                font-style:italic; font-size:1.1rem;">From $199</span>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:32px 24px;
+                            border:1px solid var(--border-light); text-align:center;">
+                  <span style="font-size:2rem; display:block; margin-bottom:14px;" aria-hidden="true">🚗</span>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:8px;">Automotive</h3>
+                  <p style="font-size:0.82rem; color:var(--text-cream); margin-bottom:12px;
+                             line-height:1.7;">
+                     Detail &amp; lifestyle shots for sellers, dealers, and enthusiasts.
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; color:var(--gold);
+                                font-style:italic; font-size:1.1rem;">From $249</span>
+               </div>
+
+               <div style="background-color:var(--dark-mid); padding:32px 24px;
+                            border:1px solid var(--border-light); text-align:center;">
+                  <span style="font-size:2rem; display:block; margin-bottom:14px;" aria-hidden="true">🌄</span>
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.15rem;
+                              color:var(--warm-white); margin-bottom:8px;">Fine Art Prints</h3>
+                  <p style="font-size:0.82rem; color:var(--text-cream); margin-bottom:12px;
+                             line-height:1.7;">
+                     Museum-quality archival prints in multiple sizes.
+                  </p>
+                  <span style="font-family:'Cormorant Garamond',serif; color:var(--gold);
+                                font-style:italic; font-size:1.1rem;">From $75</span>
+               </div>
+
+            </div>
+
+            <div class="fade-up" style="text-align:center; margin-top:40px;">
+               <a href="services.html" class="btn btn-outline">
+                  View Full Pricing &amp; Details
+               </a>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="footer-grid">
+            <div class="footer-brand">
+               <h3>B.D. Photography</h3>
+               <p>Timeless Journeys Through the Lens — fine art and portrait photography
+                  based in New Mexico.</p>
+            </div>
+            <div class="footer-col">
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery/index.html">Gallery</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4>Gallery</h4>
+               <ul>
+                  <li><a href="gallery/landscapes.html">Landscapes</a></li>
+                  <li><a href="gallery/nature.html">Nature</a></li>
+                  <li><a href="gallery/portraits.html">Portraits</a></li>
+                  <li><a href="gallery/travel.html">Travel</a></li>
+                  <li><a href="gallery/cars.html">Cars</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <p>&copy; 2026 B.D. Photography &mdash; All rights reserved.</p>
+            <p><a href="client/index.html" style="color:var(--text-light);">Client Portal</a></p>
+         </div>
+      </div>
+   </footer>
+
+   <style>
+      @media (max-width: 768px) {
+         .contact-hero-text { padding: 0 24px 40px !important; }
+      }
+   </style>
+
+   <script src="js/main.js"></script>
+</body>
+</html>

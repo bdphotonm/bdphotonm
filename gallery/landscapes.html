@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Landscapes — B.D. Photography</title>
+   <meta name="description" content="Landscape photography by B.D. Photography — sweeping vistas, dramatic light, and the natural world captured across the American Southwest.">
+   <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo">B.D.<span> Photography</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+         <li><a href="../about.html">About</a></li>
+         <li><a href="../services.html">Services</a></li>
+         <li><a href="index.html" class="active" aria-current="page">Gallery</a></li>
+         <li><a href="../contact.html">Contact</a></li>
+         <li><a href="../client/index.html">Client Portal</a></li>
+      </ul>
+   </nav>
+
+   <!-- Page Hero -->
+   <header style="position:relative; height:55vh; min-height:360px; overflow:hidden;
+                  display:flex; align-items:flex-end; justify-content:flex-start;" role="banner">
+      <img src="../images/slideshow/slideshow-1.jpg"
+           alt="Grand Canyon landscape photography"
+           style="position:absolute; inset:0; width:100%; height:100%;
+                  object-fit:cover; object-position:center;">
+      <div style="position:absolute; inset:0;
+                  background:linear-gradient(to bottom, rgba(13,13,13,0.1) 0%, rgba(13,13,13,0.75) 100%);"></div>
+      <div class="gallery-hero-text" style="position:relative; z-index:1; padding:0 80px 52px;">
+         <span style="display:block; font-size:0.7rem; letter-spacing:0.3em;
+                      text-transform:uppercase; color:var(--gold); margin-bottom:10px;">
+            Gallery
+         </span>
+         <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4.5vw,3.8rem);
+                    font-weight:300; color:var(--warm-white); line-height:1.1;">
+            <em style="font-style:italic; color:var(--gold-light);">Landscapes</em>
+         </h1>
+      </div>
+   </header>
+
+   <main>
+
+      <!-- Category Nav -->
+      <div style="background-color:var(--black); border-bottom:1px solid var(--border-light);
+                  padding:0; overflow-x:auto; white-space:nowrap;"
+           role="navigation" aria-label="Gallery categories">
+         <div style="display:inline-flex; gap:0; padding:0 48px;">
+            <a href="landscapes.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--gold);
+                      border-bottom:2px solid var(--gold); font-weight:700;
+                      white-space:nowrap;"
+               aria-current="page">Landscapes</a>
+            <a href="nature.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--text-cream);
+                      border-bottom:2px solid transparent;
+                      transition:color 0.2s, border-color 0.2s; white-space:nowrap;"
+               onmouseover="this.style.color='var(--gold-light)';this.style.borderColor='var(--border)'"
+               onmouseout="this.style.color='var(--text-cream)';this.style.borderColor='transparent'">Nature</a>
+            <a href="portraits.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--text-cream);
+                      border-bottom:2px solid transparent;
+                      transition:color 0.2s, border-color 0.2s; white-space:nowrap;"
+               onmouseover="this.style.color='var(--gold-light)';this.style.borderColor='var(--border)'"
+               onmouseout="this.style.color='var(--text-cream)';this.style.borderColor='transparent'">Portraits</a>
+            <a href="travel.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--text-cream);
+                      border-bottom:2px solid transparent;
+                      transition:color 0.2s, border-color 0.2s; white-space:nowrap;"
+               onmouseover="this.style.color='var(--gold-light)';this.style.borderColor='var(--border)'"
+               onmouseout="this.style.color='var(--text-cream)';this.style.borderColor='transparent'">Travel</a>
+            <a href="cars.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--text-cream);
+                      border-bottom:2px solid transparent;
+                      transition:color 0.2s, border-color 0.2s; white-space:nowrap;"
+               onmouseover="this.style.color='var(--gold-light)';this.style.borderColor='var(--border)'"
+               onmouseout="this.style.color='var(--text-cream)';this.style.borderColor='transparent'">Cars</a>
+            <a href="pets.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--text-cream);
+                      border-bottom:2px solid transparent;
+                      transition:color 0.2s, border-color 0.2s; white-space:nowrap;"
+               onmouseover="this.style.color='var(--gold-light)';this.style.borderColor='var(--border)'"
+               onmouseout="this.style.color='var(--text-cream)';this.style.borderColor='transparent'">Pets</a>
+            <a href="realestate.html"
+               style="display:inline-block; padding:16px 24px; font-size:0.72rem;
+                      letter-spacing:0.18em; text-transform:uppercase; color:var(--text-cream);
+                      border-bottom:2px solid transparent;
+                      transition:color 0.2s, border-color 0.2s; white-space:nowrap;"
+               onmouseover="this.style.color='var(--gold-light)';this.style.borderColor='var(--border)'"
+               onmouseout="this.style.color='var(--text-cream)';this.style.borderColor='transparent'">Real Estate</a>
+         </div>
+      </div>
+
+      <!-- Gallery -->
+      <section class="section section-dark" aria-labelledby="landscapes-heading">
+         <div class="container">
+
+            <div class="fade-up" style="margin-bottom:48px;">
+               <h2 class="section-title" id="landscapes-heading">
+                  Landscapes <em>Collection</em>
+               </h2>
+               <div class="section-divider"></div>
+               <p class="section-subtitle">
+                  Sweeping vistas and dramatic light across the American Southwest.
+                  The Grand Canyon, New Mexico deserts, mountain ranges, and more.
+                  Click any image to view full size.
+               </p>
+            </div>
+
+            <!-- =====================================================
+                 ADD YOUR LANDSCAPE PHOTOS HERE
+                 Copy and paste the gallery-item block for each photo.
+                 Replace the src, alt, and data-caption values.
+
+                 File naming tip: landscapes-01.jpg, landscapes-02.jpg etc.
+                 Put files in: images/gallery/landscapes/
+
+                 Vary the placeholder heights below to create a natural
+                 masonry look — mix tall (aspect-ratio:2/3) and wide
+                 (aspect-ratio:4/3) placeholders.
+                 ===================================================== -->
+
+            <div class="gallery-grid" id="galleryGrid">
+
+               <div class="gallery-item" data-caption="Grand Canyon — South Rim at Sunrise">
+                  <img src="../images/slideshow/slideshow-1.jpg"
+                       alt="Grand Canyon South Rim at sunrise — landscape photography by B.D. Photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">South Rim &mdash; Sunrise</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Golden Hour">
+                  <img src="../images/slideshow/slideshow-2.jpg"
+                       alt="Grand Canyon at golden hour — landscape photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Grand Canyon &mdash; Golden Hour</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Light and Shadow">
+                  <img src="../images/slideshow/slideshow-3.jpg"
+                       alt="Grand Canyon dramatic light and shadow — landscape photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Light &amp; Shadow</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Wide Vista">
+                  <img src="../images/slideshow/slideshow-4.jpg"
+                       alt="Grand Canyon wide vista — landscape photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Wide Vista</span>
+                  </div>
+               </div>
+
+               <div class="gallery-item" data-caption="Grand Canyon — Panoramic">
+                  <img src="../images/slideshow/slideshow-5.jpg"
+                       alt="Grand Canyon panoramic view — landscape photography">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Panoramic</span>
+                  </div>
+               </div>
+
+               <!-- ADD MORE PHOTOS BELOW THIS LINE -->
+               <!--
+               <div class="gallery-item" data-caption="Your Caption">
+                  <img src="../images/gallery/landscapes/landscapes-06.jpg"
+                       alt="Descriptive alt text for screen readers">
+                  <div class="gallery-overlay">
+                     <span class="gallery-overlay-text">Your Caption</span>
+                  </div>
+               </div>
+               -->
+
+            </div>
+         </div>
+      </section>
+
+      <!-- Print CTA -->
+      <section style="background-color:var(--black); padding:80px 0;"
+               aria-labelledby="print-cta-heading">
+         <div class="container fade-up" style="text-align:center;">
+            <span style="display:block; font-size:0.7rem; letter-spacing:0.3em;
+                         text-transform:uppercase; color:var(--gold); margin-bottom:16px;">
+               Take One Home
+            </span>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,2.6rem);
+                       font-weight:300; color:var(--warm-white); margin-bottom:16px;
+                       line-height:1.2;" id="print-cta-heading">
+               Available as <em style="font-style:italic; color:var(--gold-light);">Fine Art Prints</em>
+            </h2>
+            <div style="width:48px; height:1px; background:var(--gold); margin:20px auto 24px;"></div>
+            <p style="font-size:0.9rem; color:var(--text-cream); max-width:480px;
+                      margin:0 auto 36px; line-height:1.8;">
+               Select landscape images are available as museum-quality archival prints
+               in multiple sizes, framed or unframed. Inquire for availability.
+            </p>
+            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+               <a href="../services.html" class="btn btn-outline">View Print Pricing</a>
+               <a href="../contact.html" class="btn btn-gold">Order a Print</a>
+            </div>
+         </div>
+      </section>
+
+      <!-- Other Categories -->
+      <section class="section section-dark" aria-labelledby="other-cats-heading">
+         <div class="container">
+            <div class="fade-up">
+               <span class="section-eyebrow">More Work</span>
+               <h2 class="section-title" id="other-cats-heading">
+                  Explore Other <em>Collections</em>
+               </h2>
+               <div class="section-divider"></div>
+            </div>
+            <div class="category-grid fade-up"
+                 style="grid-template-columns:repeat(auto-fit, minmax(240px,1fr));">
+               <a href="nature.html" class="category-card" aria-label="View Nature gallery">
+                  <img src="../images/slideshow/slideshow-2.jpg" alt="Nature photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Nature</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+               <a href="portraits.html" class="category-card" aria-label="View Portraits gallery">
+                  <div class="category-placeholder" aria-hidden="true">🎭</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Portraits</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+               <a href="travel.html" class="category-card" aria-label="View Travel gallery">
+                  <img src="../images/slideshow/slideshow-4.jpg" alt="Travel photography">
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Travel</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+               <a href="cars.html" class="category-card" aria-label="View Cars gallery">
+                  <div class="category-placeholder" aria-hidden="true">🚗</div>
+                  <div class="category-card-overlay">
+                     <h3 class="category-name">Cars</h3>
+                     <span class="category-count">View Collection &rarr;</span>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="footer-grid">
+            <div class="footer-brand">
+               <h3>B.D. Photography</h3>
+               <p>Timeless Journeys Through the Lens — fine art and portrait photography
+                  based in New Mexico.</p>
+            </div>
+            <div class="footer-col">
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../about.html">About</a></li>
+                  <li><a href="index.html">Gallery</a></li>
+                  <li><a href="../services.html">Services</a></li>
+                  <li><a href="../contact.html">Contact</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4>Gallery</h4>
+               <ul>
+                  <li><a href="landscapes.html">Landscapes</a></li>
+                  <li><a href="nature.html">Nature</a></li>
+                  <li><a href="portraits.html">Portraits</a></li>
+                  <li><a href="travel.html">Travel</a></li>
+                  <li><a href="cars.html">Cars</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <p>&copy; 2026 B.D. Photography &mdash; All rights reserved.</p>
+            <p><a href="../client/index.html" style="color:var(--text-light);">Client Portal</a></p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Lightbox -->
+   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8592;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8594;</button>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+   </div>
+
+   <style>
+      @media (max-width: 768px) {
+         .gallery-hero-text { padding: 0 24px 40px !important; }
+         div[style*="padding:0 48px"] { padding: 0 16px !important; }
+      }
+   </style>
+
+   <script src="../js/main.js"></script>
+</body>
+</html>
