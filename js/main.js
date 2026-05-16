@@ -224,11 +224,11 @@
 var GALLERIES = {
 
    landscapes: [
-      { file: 'landscapes-01.jpg', caption: 'Grand Canyon — South Rim at Sunrise' },
-      { file: 'landscapes-02.jpg', caption: 'Grand Canyon — Golden Hour' },
-      { file: 'landscapes-03.jpg', caption: 'Grand Canyon — Light and Shadow' },
-      { file: 'landscapes-04.jpg', caption: 'Grand Canyon — Wide Vista' },
-      { file: 'landscapes-05.jpg', caption: 'Grand Canyon — Stormy Sky' },
+      { file: 'landscapes-01.jpg', caption: 'Grand Canyon 1' },
+      { file: 'landscapes-02.jpg', caption: 'Grand Canyon 2' },
+      { file: 'landscapes-03.jpg', caption: 'Grand Canyon 3' },
+      { file: 'landscapes-04.jpg', caption: 'Grand Canyon 4' },
+      { file: 'landscapes-05.jpg', caption: 'Grand Canyon 5' },
       // Add more landscape photos here:
       // { file: 'landscapes-06.jpg', caption: 'Your Caption' },
    ],
@@ -398,11 +398,7 @@ function buildGallery(category, gridId, imagePath) {
       }
 
       if (valid) {
-         var successEl = document.getElementById('formSuccess');
-         var submitBtn = document.getElementById('submitBtn');
-         if (successEl) successEl.classList.add('visible');
-         if (submitBtn) submitBtn.style.display = 'none';
-         if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+         form.submit(); // Actually send to Netlify
          setTimeout(function () {
             form.reset();
             form.querySelectorAll('input, textarea, select').forEach(function (el) {
