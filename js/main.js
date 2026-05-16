@@ -1,45 +1,39 @@
 // =============================================
-//  B.D. Photography - main.js
+//  B.D. Photography — main.js
 //  Handles:
-//    1. Nav scroll effect + hamburger menu
+//    1. Nav scroll effect + hamburger
 //    2. Hero slideshow with Ken Burns
 //    3. Scroll-triggered fade-up animations
 //    4. Lightbox photo viewer
-//    5. Contact form validation
-//    6. Quick contact form validation (homepage)
-//    7. Client portal password + session tabs
+//    5. Dynamic gallery builder
+//    6. Contact form validation
+//    7. Quick contact form validation
+//    8. Client portal password + session tabs
 // =============================================
 
 
 // ─────────────────────────────────────────────
-// 1. NAV - SCROLL EFFECT + HAMBURGER
+// 1. NAV — SCROLL EFFECT + HAMBURGER
 // ─────────────────────────────────────────────
 (function initNav() {
    var nav    = document.getElementById('mainNav');
    var toggle = document.getElementById('navToggle');
    var links  = document.getElementById('navLinks');
 
-   // Add .scrolled class when page is scrolled
    if (nav) {
       window.addEventListener('scroll', function () {
-         if (window.scrollY > 60) {
-            nav.classList.add('scrolled');
-         } else {
-            nav.classList.remove('scrolled');
-         }
+         nav.classList.toggle('scrolled', window.scrollY > 60);
       });
    }
 
    if (!toggle || !links) return;
 
-   // Hamburger open/close
    toggle.addEventListener('click', function () {
       var isOpen = links.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
    });
 
-   // Close on nav link click
    links.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
          links.classList.remove('open');
@@ -48,7 +42,6 @@
       });
    });
 
-   // Close on outside click
    document.addEventListener('click', function (e) {
       if (!toggle.contains(e.target) && !links.contains(e.target)) {
          links.classList.remove('open');
@@ -60,89 +53,51 @@
 
 
 // ─────────────────────────────────────────────
-// 2. HERO SLIDESHOW - KEN BURNS + DOTS
+// 2. HERO SLIDESHOW
 // ─────────────────────────────────────────────
 (function initSlideshow() {
-   var slides  = document.querySelectorAll('.hero-slide');
-   var dots    = document.querySelectorAll('.hero-dot');
+   var slides   = document.querySelectorAll('.hero-slide');
+   var dots     = document.querySelectorAll('.hero-dot');
    if (slides.length === 0) return;
 
    var current  = 0;
    var interval = null;
-   var duration = 6000; // ms between slides
+   var duration = 6000;
 
    function goTo(index) {
       slides[current].classList.remove('active');
       if (dots[current]) dots[current].classList.remove('active');
-
       current = (index + slides.length) % slides.length;
-
       slides[current].classList.add('active');
       if (dots[current]) dots[current].classList.add('active');
-
-      // Restart Ken Burns animation on the new slide's image
       var img = slides[current].querySelector('img');
       if (img) {
          img.style.animation = 'none';
-         // Force reflow
          void img.offsetWidth;
          img.style.animation = 'kenBurns 8s ease-in-out forwards';
       }
    }
 
-   function next() {
-      goTo(current + 1);
-   }
+   function startAutoplay() { interval = setInterval(function () { goTo(current + 1); }, duration); }
+   function stopAutoplay()  { clearInterval(interval); }
 
-   function startAutoplay() {
-      interval = setInterval(next, duration);
-   }
-
-   function stopAutoplay() {
-      clearInterval(interval);
-   }
-
-   // Dot click handlers
    dots.forEach(function (dot) {
       dot.addEventListener('click', function () {
-         var index = parseInt(dot.getAttribute('data-index'), 10);
          stopAutoplay();
-         goTo(index);
+         goTo(parseInt(dot.getAttribute('data-index'), 10));
          startAutoplay();
       });
    });
 
-   // Keyboard support for dots
-   dots.forEach(function (dot) {
-      dot.addEventListener('keydown', function (e) {
-         if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            dot.click();
-         }
-      });
-   });
-
-   // Pause on hover
    var hero = document.querySelector('.hero');
    if (hero) {
       hero.addEventListener('mouseenter', stopAutoplay);
       hero.addEventListener('mouseleave', startAutoplay);
-   }
-
-   // Touch swipe support
-   var touchStartX = 0;
-   if (hero) {
-      hero.addEventListener('touchstart', function (e) {
-         touchStartX = e.touches[0].clientX;
-      }, { passive: true });
-
+      var touchStartX = 0;
+      hero.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
       hero.addEventListener('touchend', function (e) {
          var diff = touchStartX - e.changedTouches[0].clientX;
-         if (Math.abs(diff) > 50) {
-            stopAutoplay();
-            diff > 0 ? goTo(current + 1) : goTo(current - 1);
-            startAutoplay();
-         }
+         if (Math.abs(diff) > 50) { stopAutoplay(); diff > 0 ? goTo(current + 1) : goTo(current - 1); startAutoplay(); }
       }, { passive: true });
    }
 
@@ -151,7 +106,7 @@
 
 
 // ─────────────────────────────────────────────
-// 3. SCROLL-TRIGGERED FADE-UP ANIMATIONS
+// 3. FADE-UP ANIMATIONS
 // ─────────────────────────────────────────────
 (function initFadeUp() {
    var elements = document.querySelectorAll('.fade-up');
@@ -166,21 +121,15 @@
             }
          });
       }, { threshold: 0.12 });
-
-      elements.forEach(function (el) {
-         observer.observe(el);
-      });
+      elements.forEach(function (el) { observer.observe(el); });
    } else {
-      // Fallback for older browsers
-      elements.forEach(function (el) {
-         el.classList.add('visible');
-      });
+      elements.forEach(function (el) { el.classList.add('visible'); });
    }
 }());
 
 
 // ─────────────────────────────────────────────
-// 4. LIGHTBOX PHOTO VIEWER
+// 4. LIGHTBOX
 // ─────────────────────────────────────────────
 (function initLightbox() {
    var lightbox  = document.getElementById('lightbox');
@@ -189,7 +138,6 @@
    var lbClose   = document.getElementById('lightboxClose');
    var lbPrev    = document.getElementById('lightboxPrev');
    var lbNext    = document.getElementById('lightboxNext');
-
    if (!lightbox || !lbImg) return;
 
    var galleryItems = [];
@@ -199,8 +147,17 @@
       galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
    }
 
+   function showImage(index) {
+      var item = galleryItems[index];
+      var img  = item ? item.querySelector('img') : null;
+      if (img && lbImg) { lbImg.src = img.src; lbImg.alt = img.alt; }
+      if (lbCaption) lbCaption.textContent = item ? (item.getAttribute('data-caption') || '') : '';
+      if (lbPrev) lbPrev.style.display = index > 0 ? 'flex' : 'none';
+      if (lbNext) lbNext.style.display = index < galleryItems.length - 1 ? 'flex' : 'none';
+   }
+
    function openLightbox(index) {
-      if (galleryItems.length === 0) buildGallery();
+      buildGallery();
       currentIndex = index;
       showImage(currentIndex);
       lightbox.classList.add('open');
@@ -213,40 +170,9 @@
       document.body.style.overflow = '';
    }
 
-   function showImage(index) {
-      var item    = galleryItems[index];
-      var img     = item ? item.querySelector('img') : null;
-      var caption = item ? item.getAttribute('data-caption') : '';
+   function prevImage() { if (currentIndex > 0) { currentIndex--; showImage(currentIndex); } }
+   function nextImage() { if (currentIndex < galleryItems.length - 1) { currentIndex++; showImage(currentIndex); } }
 
-      if (img && lbImg) {
-         lbImg.src = img.src;
-         lbImg.alt = img.alt;
-      }
-
-      if (lbCaption) {
-         lbCaption.textContent = caption || '';
-      }
-
-      // Show/hide prev/next
-      if (lbPrev) lbPrev.style.display = index > 0 ? 'flex' : 'none';
-      if (lbNext) lbNext.style.display = index < galleryItems.length - 1 ? 'flex' : 'none';
-   }
-
-   function prevImage() {
-      if (currentIndex > 0) {
-         currentIndex--;
-         showImage(currentIndex);
-      }
-   }
-
-   function nextImage() {
-      if (currentIndex < galleryItems.length - 1) {
-         currentIndex++;
-         showImage(currentIndex);
-      }
-   }
-
-   // Attach click to gallery items (delegated to handle dynamic content)
    document.addEventListener('click', function (e) {
       var item = e.target.closest('.gallery-item');
       if (item) {
@@ -256,43 +182,138 @@
       }
    });
 
-   // Controls
    if (lbClose) lbClose.addEventListener('click', closeLightbox);
    if (lbPrev)  lbPrev.addEventListener('click', prevImage);
    if (lbNext)  lbNext.addEventListener('click', nextImage);
+   lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
 
-   // Close on backdrop click
-   lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) closeLightbox();
-   });
-
-   // Keyboard navigation
    document.addEventListener('keydown', function (e) {
       if (!lightbox.classList.contains('open')) return;
-      switch (e.key) {
-         case 'Escape':    closeLightbox(); break;
-         case 'ArrowLeft': prevImage();     break;
-         case 'ArrowRight': nextImage();    break;
-      }
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  prevImage();
+      if (e.key === 'ArrowRight') nextImage();
    });
 
-   // Touch swipe in lightbox
    var touchStartX = 0;
-   lightbox.addEventListener('touchstart', function (e) {
-      touchStartX = e.touches[0].clientX;
-   }, { passive: true });
-
+   lightbox.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
    lightbox.addEventListener('touchend', function (e) {
       var diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) {
-         diff > 0 ? nextImage() : prevImage();
-      }
+      if (Math.abs(diff) > 50) { diff > 0 ? nextImage() : prevImage(); }
    }, { passive: true });
 }());
 
 
 // ─────────────────────────────────────────────
-// 5. MAIN CONTACT FORM VALIDATION
+// 5. DYNAMIC GALLERY BUILDER
+// ─────────────────────────────────────────────
+
+// =====================================================
+//  GALLERY PHOTO LISTS
+//
+//  To add a new photo:
+//    1. Drop the file in the correct images/gallery/
+//       subfolder (e.g. images/gallery/landscapes/)
+//    2. Add ONE line to the array below:
+//       { file: 'filename.jpg', caption: 'Your Caption' }
+//
+//  To remove a photo: delete its line
+//  To reorder photos: move lines around
+//  That's it — no HTML to touch!
+// =====================================================
+
+var GALLERIES = {
+
+   landscapes: [
+      { file: 'landscapes-01.jpg', caption: 'Grand Canyon — South Rim at Sunrise' },
+      { file: 'landscapes-02.jpg', caption: 'Grand Canyon — Golden Hour' },
+      { file: 'landscapes-03.jpg', caption: 'Grand Canyon — Light and Shadow' },
+      { file: 'landscapes-04.jpg', caption: 'Grand Canyon — Wide Vista' },
+      { file: 'landscapes-05.jpg', caption: 'Grand Canyon — Stormy Sky' },
+      // Add more landscape photos here:
+      // { file: 'landscapes-06.jpg', caption: 'Your Caption' },
+   ],
+
+   nature: [
+      // Add nature photos here:
+      // { file: 'nature-01.jpg', caption: 'Your Caption' },
+   ],
+
+   portraits: [
+      // Add portrait photos here:
+      // { file: 'portraits-01.jpg', caption: 'Your Caption' },
+   ],
+
+   travel: [
+      // Add travel photos here:
+      // { file: 'travel-01.jpg', caption: 'Your Caption' },
+   ],
+
+   cars: [
+      // Add car photos here:
+      // { file: 'cars-01.jpg', caption: 'Your Caption' },
+   ],
+
+   pets: [
+      // Add pet photos here:
+      // { file: 'pets-01.jpg', caption: 'Your Caption' },
+   ],
+
+   realestate: [
+      // Add real estate photos here:
+      // { file: 'realestate-01.jpg', caption: 'Your Caption' },
+   ]
+
+};
+
+// Builds gallery HTML from the arrays above
+function buildGallery(category, gridId, imagePath) {
+   var grid   = document.getElementById(gridId);
+   var photos = GALLERIES[category];
+   if (!grid || !photos) return;
+
+   if (photos.length === 0) {
+      grid.innerHTML =
+         '<div class="gallery-placeholder" style="height:300px; grid-column:1/-1;">' +
+         '<div style="text-align:center;">' +
+         '<div style="font-size:2rem; margin-bottom:10px;">🖼</div>' +
+         '<p style="margin:0; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light);">' +
+         'Photos coming soon</p></div></div>';
+      return;
+   }
+
+   grid.innerHTML = photos.map(function (photo) {
+      return '<div class="gallery-item" data-caption="' + photo.caption + '">' +
+         '<img src="' + imagePath + photo.file + '" alt="' + photo.caption + '" loading="lazy">' +
+         '<div class="gallery-overlay">' +
+         '<span class="gallery-overlay-text">' + photo.caption + '</span>' +
+         '</div></div>';
+   }).join('');
+}
+
+// Auto-detect which gallery page we're on and build it
+(function initGalleryBuilder() {
+   var path = window.location.pathname;
+
+   if (path.indexOf('landscapes') !== -1) {
+      buildGallery('landscapes', 'galleryGrid', '../images/gallery/landscapes/');
+   } else if (path.indexOf('nature') !== -1) {
+      buildGallery('nature', 'galleryGrid', '../images/gallery/nature/');
+   } else if (path.indexOf('portraits') !== -1) {
+      buildGallery('portraits', 'galleryGrid', '../images/gallery/portraits/');
+   } else if (path.indexOf('travel') !== -1) {
+      buildGallery('travel', 'galleryGrid', '../images/gallery/travel/');
+   } else if (path.indexOf('cars') !== -1) {
+      buildGallery('cars', 'galleryGrid', '../images/gallery/cars/');
+   } else if (path.indexOf('pets') !== -1) {
+      buildGallery('pets', 'galleryGrid', '../images/gallery/pets/');
+   } else if (path.indexOf('realestate') !== -1) {
+      buildGallery('realestate', 'galleryGrid', '../images/gallery/realestate/');
+   }
+}());
+
+
+// ─────────────────────────────────────────────
+// 6. CONTACT FORM VALIDATION
 // ─────────────────────────────────────────────
 (function initContactForm() {
    var form = document.getElementById('contactForm');
@@ -317,7 +338,6 @@
       if (errEl) errEl.classList.remove('visible');
    }
 
-   // Real-time blur validation
    function blurRule(id, errorId, testFn) {
       var el  = document.getElementById(id);
       var err = document.getElementById(errorId);
@@ -327,11 +347,11 @@
       });
    }
 
-   blurRule('firstName', 'firstNameError', function (v) { return v.trim().length > 0; });
-   blurRule('lastName',  'lastNameError',  function (v) { return v.trim().length > 0; });
-   blurRule('email',     'emailError',     function (v) { return emailRegex.test(v.trim()); });
-   blurRule('location',  'locationError',  function (v) { return v.trim().length > 0; });
-   blurRule('message',   'messageError',   function (v) { return v.trim().length >= 10; });
+   blurRule('firstName',   'firstNameError',   function (v) { return v.trim().length > 0; });
+   blurRule('lastName',    'lastNameError',     function (v) { return v.trim().length > 0; });
+   blurRule('email',       'emailError',        function (v) { return emailRegex.test(v.trim()); });
+   blurRule('location',    'locationError',     function (v) { return v.trim().length > 0; });
+   blurRule('message',     'messageError',      function (v) { return v.trim().length >= 10; });
 
    var phoneEl = document.getElementById('phone');
    if (phoneEl) {
@@ -351,34 +371,30 @@
       });
    }
 
-   // Submit validation
    form.addEventListener('submit', function (e) {
       e.preventDefault();
       var valid = true;
 
       var fields = [
          { id: 'firstName',   errId: 'firstNameError',   test: function (v) { return v.trim().length > 0; } },
-         { id: 'lastName',    errId: 'lastNameError',    test: function (v) { return v.trim().length > 0; } },
-         { id: 'email',       errId: 'emailError',       test: function (v) { return emailRegex.test(v.trim()); } },
-         { id: 'sessionType', errId: 'sessionTypeError', test: function (v) { return v !== ''; } },
-         { id: 'location',    errId: 'locationError',    test: function (v) { return v.trim().length > 0; } },
-         { id: 'message',     errId: 'messageError',     test: function (v) { return v.trim().length >= 10; } }
+         { id: 'lastName',    errId: 'lastNameError',     test: function (v) { return v.trim().length > 0; } },
+         { id: 'email',       errId: 'emailError',        test: function (v) { return emailRegex.test(v.trim()); } },
+         { id: 'sessionType', errId: 'sessionTypeError',  test: function (v) { return v !== ''; } },
+         { id: 'location',    errId: 'locationError',     test: function (v) { return v.trim().length > 0; } },
+         { id: 'message',     errId: 'messageError',      test: function (v) { return v.trim().length >= 10; } }
       ];
 
       fields.forEach(function (field) {
          var el  = document.getElementById(field.id);
          var err = document.getElementById(field.errId);
          if (!el) return;
-         if (field.test(el.value)) { setValid(el, err); }
-         else { setInvalid(el, err); valid = false; }
+         field.test(el.value) ? setValid(el, err) : (setInvalid(el, err), valid = false);
       });
 
-      // Optional phone
       if (phoneEl && phoneEl.value.trim() !== '') {
          var digits = phoneEl.value.replace(/\D/g, '');
          var phErr  = document.getElementById('phoneError');
-         if (digits.length < 10) { setInvalid(phoneEl, phErr); valid = false; }
-         else { setValid(phoneEl, phErr); }
+         digits.length >= 10 ? setValid(phoneEl, phErr) : (setInvalid(phoneEl, phErr), valid = false);
       }
 
       if (valid) {
@@ -387,32 +403,22 @@
          if (successEl) successEl.classList.add('visible');
          if (submitBtn) submitBtn.style.display = 'none';
          if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-         // Reset fields after short delay
          setTimeout(function () {
             form.reset();
             form.querySelectorAll('input, textarea, select').forEach(function (el) {
                el.classList.remove('valid', 'invalid');
             });
          }, 600);
-
-         // Note: with data-netlify="true", Netlify intercepts the actual submission.
-         // For a real send uncomment the line below and remove e.preventDefault() above.
-         // form.submit();
-
       } else {
          var firstInvalid = form.querySelector('.invalid');
-         if (firstInvalid) {
-            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            firstInvalid.focus();
-         }
+         if (firstInvalid) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); firstInvalid.focus(); }
       }
    });
 }());
 
 
 // ─────────────────────────────────────────────
-// 6. QUICK CONTACT FORM (Homepage)
+// 7. QUICK CONTACT FORM (Homepage)
 // ─────────────────────────────────────────────
 (function initQuickForm() {
    var form = document.getElementById('quickContactForm');
@@ -420,54 +426,26 @@
 
    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-   function setValid(input, errEl) {
-      input.classList.remove('invalid');
-      input.classList.add('valid');
-      if (errEl) errEl.classList.remove('visible');
-   }
-
-   function setInvalid(input, errEl) {
-      input.classList.remove('valid');
-      input.classList.add('invalid');
-      if (errEl) errEl.classList.add('visible');
-   }
+   function setValid(input, errEl) { input.classList.remove('invalid'); input.classList.add('valid'); if (errEl) errEl.classList.remove('visible'); }
+   function setInvalid(input, errEl) { input.classList.remove('valid'); input.classList.add('invalid'); if (errEl) errEl.classList.add('visible'); }
 
    form.addEventListener('submit', function (e) {
       e.preventDefault();
       var valid = true;
 
-      var nameEl    = document.getElementById('qcName');
-      var emailEl   = document.getElementById('qcEmail');
-      var typeEl    = document.getElementById('qcType');
-      var messageEl = document.getElementById('qcMessage');
+      var fields = [
+         { id: 'qcName',    errId: 'qcNameError',    test: function (v) { return v.trim().length > 0; } },
+         { id: 'qcEmail',   errId: 'qcEmailError',   test: function (v) { return emailRegex.test(v.trim()); } },
+         { id: 'qcType',    errId: 'qcTypeError',    test: function (v) { return v !== ''; } },
+         { id: 'qcMessage', errId: 'qcMessageError', test: function (v) { return v.trim().length >= 10; } }
+      ];
 
-      if (nameEl) {
-         var nameErr = document.getElementById('qcNameError');
-         nameEl.value.trim().length > 0
-            ? setValid(nameEl, nameErr)
-            : (setInvalid(nameEl, nameErr), valid = false);
-      }
-
-      if (emailEl) {
-         var emailErr = document.getElementById('qcEmailError');
-         emailRegex.test(emailEl.value.trim())
-            ? setValid(emailEl, emailErr)
-            : (setInvalid(emailEl, emailErr), valid = false);
-      }
-
-      if (typeEl) {
-         var typeErr = document.getElementById('qcTypeError');
-         typeEl.value
-            ? setValid(typeEl, typeErr)
-            : (setInvalid(typeEl, typeErr), valid = false);
-      }
-
-      if (messageEl) {
-         var msgErr = document.getElementById('qcMessageError');
-         messageEl.value.trim().length >= 10
-            ? setValid(messageEl, msgErr)
-            : (setInvalid(messageEl, msgErr), valid = false);
-      }
+      fields.forEach(function (field) {
+         var el  = document.getElementById(field.id);
+         var err = document.getElementById(field.errId);
+         if (!el) return;
+         field.test(el.value) ? setValid(el, err) : (setInvalid(el, err), valid = false);
+      });
 
       if (valid) {
          var successEl = document.getElementById('qcFormSuccess');
@@ -477,9 +455,7 @@
          if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
          setTimeout(function () {
             form.reset();
-            form.querySelectorAll('input, textarea, select').forEach(function (el) {
-               el.classList.remove('valid', 'invalid');
-            });
+            form.querySelectorAll('input, textarea, select').forEach(function (el) { el.classList.remove('valid', 'invalid'); });
          }, 600);
       }
    });
@@ -487,44 +463,36 @@
 
 
 // ─────────────────────────────────────────────
-// 7. CLIENT PORTAL - PASSWORD + SESSION TABS
+// 8. CLIENT PORTAL
 // ─────────────────────────────────────────────
 (function initClientPortal() {
-   var loginEl  = document.getElementById('portalLogin');
+   var loginEl   = document.getElementById('portalLogin');
    var galleryEl = document.getElementById('portalGallery');
    if (!loginEl || !galleryEl) return;
 
    // =====================================================
-   //  CLIENT PASSWORDS - ADD / EDIT HERE
+   //  CLIENT PASSWORDS
    //
-   //  Format: 'password': 'Client Name'
+   //  Add a new client:
+   //    'theirpassword': 'Their Name'
    //
-   //  To add a new client:
-   //    1. Add a line below: 'theirpassword': 'Their Name'
-   //    2. Create their gallery folder: images/clients/theirname/
-   //    3. Add their photos to the portal HTML above
-   //
-   //  Keep passwords hard to guess - mix of words and
-   //  numbers works well. Example: 'canyon2026photos'
+   //  Give the client their password in the delivery email.
+   //  Passwords are case sensitive.
    // =====================================================
    var PASSWORDS = {
       'bdphoto2026':  'Demo Client',
       'canyon2026':   'Canyon Session',
       'portrait2026': 'Portrait Client'
-      // Add more clients here:
-      // 'clientpassword': 'Client Name',
+      // 'newpassword': 'Client Name',
    };
 
    var SESSION_KEY = 'bdphoto_portal_auth';
 
    function unlock() {
-      loginEl.style.display  = 'none';
+      loginEl.style.display   = 'none';
       galleryEl.style.display = 'block';
-      // Trigger fade-up animations in the gallery
       setTimeout(function () {
-         document.querySelectorAll('.fade-up').forEach(function (el) {
-            el.classList.add('visible');
-         });
+         document.querySelectorAll('.fade-up').forEach(function (el) { el.classList.add('visible'); });
       }, 100);
    }
 
@@ -534,50 +502,32 @@
       try { sessionStorage.removeItem(SESSION_KEY); } catch (e) {}
    }
 
-   // Check for saved session
-   try {
-      if (sessionStorage.getItem(SESSION_KEY) === 'authenticated') {
-         unlock();
-      }
-   } catch (e) {}
+   try { if (sessionStorage.getItem(SESSION_KEY) === 'authenticated') unlock(); } catch (e) {}
 
-   // Password submit button
-   var submitBtn    = document.getElementById('portalSubmit');
+   var submitBtn     = document.getElementById('portalSubmit');
    var passwordInput = document.getElementById('portalPassword');
-   var errorEl      = document.getElementById('portalError');
+   var errorEl       = document.getElementById('portalError');
 
    function attemptLogin() {
       var entered = passwordInput ? passwordInput.value.trim() : '';
       if (PASSWORDS.hasOwnProperty(entered)) {
-         // Correct password
          if (errorEl) errorEl.classList.remove('visible');
          try { sessionStorage.setItem(SESSION_KEY, 'authenticated'); } catch (e) {}
          unlock();
       } else {
-         // Wrong password
          if (errorEl) errorEl.classList.add('visible');
          if (passwordInput) {
             passwordInput.value = '';
             passwordInput.focus();
             passwordInput.style.borderBottomColor = '#c0392b';
-            setTimeout(function () {
-               passwordInput.style.borderBottomColor = '';
-            }, 1500);
+            setTimeout(function () { passwordInput.style.borderBottomColor = ''; }, 1500);
          }
       }
    }
 
-   if (submitBtn) {
-      submitBtn.addEventListener('click', attemptLogin);
-   }
+   if (submitBtn)     submitBtn.addEventListener('click', attemptLogin);
+   if (passwordInput) passwordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') attemptLogin(); });
 
-   if (passwordInput) {
-      passwordInput.addEventListener('keydown', function (e) {
-         if (e.key === 'Enter') attemptLogin();
-      });
-   }
-
-   // Logout button
    var logoutBtn = document.getElementById('portalLogout');
    if (logoutBtn) {
       logoutBtn.addEventListener('click', function () {
@@ -586,26 +536,16 @@
       });
    }
 
-   // Session tabs
    var tabs   = document.querySelectorAll('.portal-tab');
    var panels = document.querySelectorAll('.session-panel');
 
    tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
          var target = tab.getAttribute('data-session');
-
-         // Update tab states
-         tabs.forEach(function (t) {
-            t.classList.remove('active');
-            t.setAttribute('aria-selected', 'false');
-         });
+         tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
          tab.classList.add('active');
          tab.setAttribute('aria-selected', 'true');
-
-         // Show target panel
-         panels.forEach(function (panel) {
-            panel.style.display = panel.id === target + 'panel' ? 'block' : 'none';
-         });
+         panels.forEach(function (panel) { panel.style.display = panel.id === target + 'panel' ? 'block' : 'none'; });
       });
    });
 }());
