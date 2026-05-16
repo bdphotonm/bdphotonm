@@ -398,13 +398,7 @@ function buildGallery(category, gridId, imagePath) {
       }
 
       if (valid) {
-         form.submit(); // Actually send to Netlify
-         setTimeout(function () {
-            form.reset();
-            form.querySelectorAll('input, textarea, select').forEach(function (el) {
-               el.classList.remove('valid', 'invalid');
-            });
-         }, 600);
+         form.submit();
       } else {
          var firstInvalid = form.querySelector('.invalid');
          if (firstInvalid) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); firstInvalid.focus(); }
